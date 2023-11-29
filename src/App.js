@@ -98,24 +98,30 @@ export default function App() {
 	return (
 		<div>
 			<Header />
-			<Buttons
+			<AppButtons
 				showTest={showTest}
 				showQuestions={showQuestions}
 				onShowTest={handleShowTest}
 				onShowQuestions={handleShowQuestions}
 			/>
-			
+
 			{showResults && <Results result={result} />}
 			{showQuestions && <Questions />}
 			{showTest ? (
 				<Test
 					currentQuestion={currentQuestion}
 					showAnswer={showAnswer}
-					onWrongAnswer={handleWrongAnswer}
-					onCorrectAnswer={handleCorrectAnswer}
-					setShowAnswer={setShowAnswer}
-				/>
-			):<Intro/>}
+				>
+					<TestButtons
+						onWrongAnswer={handleWrongAnswer}
+						onCorrectAnswer={handleCorrectAnswer}
+						setShowAnswer={setShowAnswer}
+						currentQuestion={currentQuestion}
+					/>
+				</Test>
+			) : (
+				<Intro />
+			)}
 		</div>
 	)
 }
@@ -130,7 +136,7 @@ function Header() {
 	)
 }
 
-function Buttons({ showTest, onShowQuestions, showQuestions, onShowTest }) {
+function AppButtons({ showTest, onShowQuestions, showQuestions, onShowTest }) {
 	return (
 		<div className='container'>
 			{!showTest && (
@@ -154,6 +160,39 @@ function Buttons({ showTest, onShowQuestions, showQuestions, onShowTest }) {
 	)
 }
 
+function TestButtons({
+	onWrongAnswer,
+	onCorrectAnswer,
+	setShowAnswer,
+	currentQuestion,
+}) {
+	return (
+		<>
+			<Button
+				textColor='#ffb3ba'
+				bgColor='#1c2129'
+				onClick={onWrongAnswer}
+			>
+				✘
+			</Button>
+			<Button
+				textColor='#bae1ff'
+				bgColor='#1c2129'
+				onClick={() => setShowAnswer(true)}
+			>
+				Zobrazit odpověď
+			</Button>
+			<Button
+				textColor='#baffc9'
+				bgColor='#1c2129'
+				onClick={() => onCorrectAnswer(currentQuestion?.id)}
+			>
+				✔
+			</Button>
+		</>
+	)
+}
+
 function Questions() {
 	return data.map((question) => <Question question={question} />)
 }
@@ -174,13 +213,7 @@ function Question({ question }) {
 	)
 }
 
-function Test({
-	currentQuestion,
-	showAnswer,
-	onWrongAnswer,
-	onCorrectAnswer,
-	setShowAnswer,
-}) {
+function Test({ currentQuestion, showAnswer, children }) {
 	return (
 		<div>
 			<div className='question'>
@@ -188,29 +221,7 @@ function Test({
 				{showAnswer && <p>{currentQuestion?.answer}</p>}
 			</div>
 
-			<div className='answer'>
-				<Button
-					textColor='#ffb3ba'
-					bgColor='#1c2129'
-					onClick={onWrongAnswer}
-				>
-					✘
-				</Button>
-				<Button
-					textColor='#bae1ff'
-					bgColor='#1c2129'
-					onClick={() => setShowAnswer(true)}
-				>
-					Zobrazit odpověď
-				</Button>
-				<Button
-					textColor='#baffc9'
-					bgColor='#1c2129'
-					onClick={() => onCorrectAnswer(currentQuestion?.id)}
-				>
-					✔
-				</Button>
-			</div>
+			<div className='answer'>{children}</div>
 		</div>
 	)
 }
@@ -219,16 +230,27 @@ function Results({ result }) {
 	return <p className='result'>Úspěšnost testu byla {result}%</p>
 }
 
-function Intro(){
+function Intro() {
 	return (
-		<div className="intro">
-			<p>Vlož otázky s odpověďmi, spusť test a procvičuj své znalosti v jakémkoliv oboru.</p>
+		<div className='intro'>
+			<p>
+				Vlož otázky s odpověďmi, spusť test a procvičuj své znalosti v
+				jakémkoliv oboru.
+			</p>
 			<p>Po zobrazení otázky se snaž odpovědět co nejpřesněji na otázku. </p>
 			<p>Pak si zobraz pro kontrolu odpověď a ohodnoť se.</p>
-			<p>Když označíš otázku jako správně zodpovězenou, znovu se ti nezobrazí.</p>
-			<p>Když označíš otázku jako špatně nebo neúplně zodpovězenou, otázka se ti bude náhodně zobrazovat znovu, dokud odpověď na ní neoznačíš jako správnou.</p>
-			<p>V závěru testu se ti zobrazí procentuální úspěšnost, tedy kolik odpovědí bylo správně vůči celkovému množství zodpovězených otázek.</p>
+			<p>
+				Když označíš otázku jako správně zodpovězenou, znovu se ti nezobrazí.
+			</p>
+			<p>
+				Když označíš otázku jako špatně nebo neúplně zodpovězenou, otázka se ti
+				bude náhodně zobrazovat znovu, dokud odpověď na ní neoznačíš jako
+				správnou.
+			</p>
+			<p>
+				V závěru testu se ti zobrazí procentuální úspěšnost, tedy kolik odpovědí
+				bylo správně vůči celkovému množství zodpovězených otázek.
+			</p>
 		</div>
 	)
-	
 }
