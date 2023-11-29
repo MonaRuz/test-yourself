@@ -32,42 +32,12 @@ header span {
 	padding: 5px;
 }
 
-/* button {
-	background-color: #1c2129;
-	border: 2px solid #ffffba;
-	padding: 10px;
-	margin: 20px;
-	font-size: 18px;
-	color: #ffffba;
-	min-width: 50px;
-	height: 50px;
-} */
-
-/* button:hover {
-	background-color: #ffffba;
-	border: none;
-	color: #1c2129;
-} */
-
 .answer {
 	display: flex;
 	justify-content: center;
 }
 
-.wrong:hover {
-	background-color: #ffb3ba;
-	border: none;
-}
 
-.show-answer:hover {
-	background-color: #bae1ff;
-	border: none;
-}
-
-.correct:hover {
-	background-color: #baffc9;
-	border: none;
-}
 .result {
 	text-align: center;
 	color: #ffdfba;
@@ -77,6 +47,17 @@ header span {
 .result-buttons {
 	display: flex;
 	justify-content: center;
+}
+.intro p{
+	text-align: center;
+	color:#baffc9 ;
+}
+
+.intro{
+	border-bottom:1px solid #baffc9 ;
+	border-top: 1px solid #baffc9;
+	max-width: 800px;
+	margin: 20px auto;
 }
 
 /* #ffb3ba

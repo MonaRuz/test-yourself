@@ -40,9 +40,9 @@ function Button({ textColor, bgColor, onClick, children }) {
 export default function App() {
 	const [showQuestions, setShowQuestions] = useState(false)
 	const [showTest, setShowTest] = useState(false)
-	const [questions, setQuestions] = useState(data)
 	const [showResults, setShowResults] = useState(false)
 	const [showAnswer, setShowAnswer] = useState(false)
+	const [questions, setQuestions] = useState(data)
 	const [counter, setCounter] = useState(0)
 	const [currentQuestion, setCurrentQuestion] = useState(
 		questions[getRandomQuestion(0, questions.length)]
@@ -97,51 +97,73 @@ export default function App() {
 
 	return (
 		<div>
-			<header>
-				<h1>
-					TestYS...<span> Otestuj své znalosti</span>
-				</h1>
-			</header>
-
-			<div className='container'>
-				{!showTest && (
-					<Button
-						textColor='#ffffba'
-						bgColor='#1c2129'
-						onClick={handleShowQuestions}
-					>
-						{!showQuestions ? "Zobrazit otázky" : "Skrýt otázky"}{" "}
-					</Button>
-				)}
-
-				<Button
-					textColor='#ffffba'
-					bgColor='#1c2129'
-					onClick={handleShowTest}
-				>
-					{!showTest ? "Spustit test" : "Přerušit test"}
-				</Button>
-			</div>
-			{showResults && <p className='result'>Úspěšnost testu byla {result}%</p>}
-
+			<Header />
+			<Buttons
+				showTest={showTest}
+				showQuestions={showQuestions}
+				onShowTest={handleShowTest}
+				onShowQuestions={handleShowQuestions}
+			/>
+			
+			{showResults && <Results result={result} />}
 			{showQuestions && <Questions />}
-			{showTest && (
+			{showTest ? (
 				<Test
-					questions={questions}
 					currentQuestion={currentQuestion}
 					showAnswer={showAnswer}
 					onWrongAnswer={handleWrongAnswer}
 					onCorrectAnswer={handleCorrectAnswer}
 					setShowAnswer={setShowAnswer}
 				/>
+			):<Intro/>}
+		</div>
+	)
+}
+
+function Header() {
+	return (
+		<header>
+			<h1>
+				TestYS...<span> Otestuj své znalosti</span>
+			</h1>
+		</header>
+	)
+}
+
+function Buttons({ showTest, onShowQuestions, showQuestions, onShowTest }) {
+	return (
+		<div className='container'>
+			{!showTest && (
+				<Button
+					textColor='#ffffba'
+					bgColor='#1c2129'
+					onClick={onShowQuestions}
+				>
+					{!showQuestions ? "Zobrazit otázky" : "Skrýt otázky"}{" "}
+				</Button>
 			)}
+
+			<Button
+				textColor='#ffffba'
+				bgColor='#1c2129'
+				onClick={onShowTest}
+			>
+				{!showTest ? "Spustit test" : "Přerušit test"}
+			</Button>
 		</div>
 	)
 }
 
 function Questions() {
-	return data.map((question) => (
-		<div className='question' key={question.id}>
+	return data.map((question) => <Question question={question} />)
+}
+
+function Question({ question }) {
+	return (
+		<div
+			className='question'
+			key={question.id}
+		>
 			<p>
 				Otázka: <span>{question.question}</span>
 			</p>
@@ -149,7 +171,7 @@ function Questions() {
 				Odpověď: <span>{question.answer}</span>
 			</p>
 		</div>
-	))
+	)
 }
 
 function Test({
@@ -191,4 +213,22 @@ function Test({
 			</div>
 		</div>
 	)
+}
+
+function Results({ result }) {
+	return <p className='result'>Úspěšnost testu byla {result}%</p>
+}
+
+function Intro(){
+	return (
+		<div className="intro">
+			<p>Vlož otázky s odpověďmi, spusť test a procvičuj své znalosti v jakémkoliv oboru.</p>
+			<p>Po zobrazení otázky se snaž odpovědět co nejpřesněji na otázku. </p>
+			<p>Pak si zobraz pro kontrolu odpověď a ohodnoť se.</p>
+			<p>Když označíš otázku jako správně zodpovězenou, znovu se ti nezobrazí.</p>
+			<p>Když označíš otázku jako špatně nebo neúplně zodpovězenou, otázka se ti bude náhodně zobrazovat znovu, dokud odpověď na ní neoznačíš jako správnou.</p>
+			<p>V závěru testu se ti zobrazí procentuální úspěšnost, tedy kolik odpovědí bylo správně vůči celkovému množství zodpovězených otázek.</p>
+		</div>
+	)
+	
 }
