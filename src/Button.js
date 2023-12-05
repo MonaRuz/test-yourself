@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export default function Button ({textColor="black", bgColor="transparent", onClick, children, borderWidth=1,borderRad=0,childrenSize=18,className}) {
+export default function Button ({textColor="black", bgColor="white", onClick, children, borderWidth=1,borderRad=0,childrenSize=18,className}) {
     const buttonStyle = {
 		padding: "10px",
 		margin: "20px",
 		fontSize: `${childrenSize}px`,
-		minWidth: "50px",
-		height: "50px",
+		minWidth: "150px",
+		height: "45px",
 		color: textColor,
 		backgroundColor: bgColor,
 		border: `${borderWidth}px solid ${textColor}`,

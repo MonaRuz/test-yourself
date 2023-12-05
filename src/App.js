@@ -2,9 +2,8 @@ import { useEffect, useState } from "react"
 import data from "./data"
 import Button from "./Button"
 
-
-
 export default function App() {
+	const [showIntro, setShowIntro] = useState(true)
 	const [showQuestions, setShowQuestions] = useState(false)
 	const [showTest, setShowTest] = useState(false)
 	const [showResults, setShowResults] = useState(false)
@@ -19,6 +18,7 @@ export default function App() {
 	function handleShowQuestions() {
 		setShowQuestions(!showQuestions)
 		setShowTest(false)
+		setShowIntro(!showIntro)
 	}
 
 	function handleShowTest() {
@@ -53,7 +53,13 @@ export default function App() {
 		if (questions.length < 2) {
 			setShowResults(true)
 			setShowTest(false)
+			setShowIntro(false)
 		}
+	}
+
+	function handleBack() {
+		setShowIntro(true)
+		setShowResults(false)
 	}
 
 	useEffect(() => {
@@ -72,7 +78,12 @@ export default function App() {
 				onShowQuestions={handleShowQuestions}
 			/>
 
-			{showResults && <Results result={result} />}
+			{showResults && (
+				<Results
+					result={result}
+					onBack={handleBack}
+				/>
+			)}
 			{showQuestions && <Questions />}
 			{showTest ? (
 				<Test
@@ -82,12 +93,13 @@ export default function App() {
 					<TestButtons
 						onWrongAnswer={handleWrongAnswer}
 						onCorrectAnswer={handleCorrectAnswer}
+						showAnswer={showAnswer}
 						setShowAnswer={setShowAnswer}
 						currentQuestion={currentQuestion}
 					/>
 				</Test>
 			) : (
-				!showResults && <Intro />
+				showIntro && <Intro />
 			)}
 		</div>
 	)
@@ -130,6 +142,7 @@ function AppButtons({ showTest, onShowQuestions, showQuestions, onShowTest }) {
 function TestButtons({
 	onWrongAnswer,
 	onCorrectAnswer,
+	showAnswer,
 	setShowAnswer,
 	currentQuestion,
 }) {
@@ -142,13 +155,16 @@ function TestButtons({
 			>
 				✘
 			</Button>
-			<Button
-				textColor='#bae1ff'
-				bgColor='#1c2129'
-				onClick={() => setShowAnswer(true)}
-			>
-				Zobrazit odpověď
-			</Button>
+			{!showAnswer && (
+				<Button
+					textColor='#bae1ff'
+					bgColor='#1c2129'
+					onClick={() => setShowAnswer(true)}
+				>
+					Zobrazit odpověď
+				</Button>
+			)}
+
 			<Button
 				textColor='#baffc9'
 				bgColor='#1c2129'
@@ -193,8 +209,19 @@ function Test({ currentQuestion, showAnswer, children }) {
 	)
 }
 
-function Results({ result }) {
-	return <p className='result'>Úspěšnost testu byla {result}%</p>
+function Results({ result, onBack }) {
+	return (
+		<div className='result'>
+			<p className='result'>Úspěšnost testu byla {result}%</p>
+			<Button
+				textColor='#baffc9'
+				bgColor='#1c2129'
+				onClick={onBack}
+			>
+				Zpět
+			</Button>
+		</div>
+	)
 }
 
 function Intro() {
