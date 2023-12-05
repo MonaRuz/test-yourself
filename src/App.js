@@ -178,7 +178,7 @@ function TestButtons({
 }
 
 function Questions() {
-	return data.map((question) => <Question question={question} />)
+	return data.map((question) => <Question question={question} key={question.id}/>)
 }
 
 function Question({ question }) {
