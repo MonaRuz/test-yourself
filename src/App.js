@@ -26,6 +26,7 @@ export default function App() {
 		setShowQuestions(false)
 		setShowResults(false)
 		setQuestions(data)
+		if (!showIntro) setShowIntro(true)
 	}
 
 	function getRandomQuestion(min, max) {
