@@ -1,41 +1,8 @@
 import { useEffect, useState } from "react"
 import data from "./data"
+import Button from "./Button"
 
-function Button({ textColor, bgColor, onClick, children }) {
-	const buttonStyle = {
-		padding: "10px",
-		margin: "20px",
-		fontSize: "18px",
-		minWidth: "50px",
-		height: "50px",
-		color: textColor,
-		backgroundColor: bgColor,
-		border: `1px solid ${textColor}`,
-	}
 
-	const invertedStyle = {
-		color: bgColor,
-		backgroundColor: textColor,
-		border: `1px solid ${bgColor}`,
-	}
-
-	return (
-		<button
-			style={buttonStyle}
-			onMouseEnter={(e) => {
-				e.currentTarget.style.color = invertedStyle.color
-				e.currentTarget.style.backgroundColor = invertedStyle.backgroundColor
-			}}
-			onMouseLeave={(e) => {
-				e.currentTarget.style.color = buttonStyle.color
-				e.currentTarget.style.backgroundColor = buttonStyle.backgroundColor
-			}}
-			onClick={onClick}
-		>
-			{children}
-		</button>
-	)
-}
 
 export default function App() {
 	const [showQuestions, setShowQuestions] = useState(false)
