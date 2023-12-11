@@ -1,77 +1,30 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import data from "./data"
 import Button from "./Button"
 
 export default function App() {
-	const [showIntro, setShowIntro] = useState(true)
 	const [showQuestions, setShowQuestions] = useState(false)
 	const [showTest, setShowTest] = useState(false)
-	const [showResults, setShowResults] = useState(false)
-	const [showAnswer, setShowAnswer] = useState(false)
-	const [questions, setQuestions] = useState(data)
 	const [counter, setCounter] = useState(0)
-	const [currentQuestion, setCurrentQuestion] = useState(
-		questions[getRandomQuestion(0, questions.length)]
-	)
-	const [result, setResult] = useState(0)
+	const result = Math.ceil(100 - (counter / (data.length + counter)) * 100)
 
 	function handleShowQuestions() {
 		setShowQuestions(!showQuestions)
 		setShowTest(false)
-		setShowIntro(!showIntro)
 	}
 
 	function handleShowTest() {
 		setShowTest(!showTest)
 		setShowQuestions(false)
-		setShowResults(false)
-		setQuestions(data)
-		if (!showIntro) setShowIntro(true)
 	}
 
-	function getRandomQuestion(min, max) {
-		min = Math.ceil(min)
-		max = Math.floor(max)
-		return Math.floor(Math.random() * (max - min) + min)
+	function handleCounter() {
+		setCounter()
 	}
-
-	function handleWrongAnswer() {
-		setCurrentQuestion(questions[getRandomQuestion(0, questions.length)])
-		setShowAnswer(false)
-		setCounter((count) => count + 1)
-	}
-
-	function handleCorrectAnswer(id) {
-		let updatedQuestions = questions.filter((question) => {
-			return question.id !== id
-		})
-		setQuestions(updatedQuestions)
-		setShowAnswer(false)
-		setCurrentQuestion(
-			updatedQuestions[getRandomQuestion(0, updatedQuestions.length)]
-		)
-		setResult(Math.ceil(100 - (counter / (data.length + counter)) * 100))
-		if (questions.length < 2) {
-			setShowResults(true)
-			setShowTest(false)
-			setShowIntro(false)
-		}
-	}
-
-	function handleBack() {
-		setShowIntro(true)
-		setShowResults(false)
-	}
-
-	useEffect(() => {
-		if (showTest) {
-			setCurrentQuestion(questions[getRandomQuestion(0, questions.length)])
-		}
-	}, [showTest])
-
 	return (
-		<div>
+		<>
 			<Header />
+			{!showTest && !showQuestions && <Intro />}
 			<AppButtons
 				showTest={showTest}
 				showQuestions={showQuestions}
@@ -79,30 +32,14 @@ export default function App() {
 				onShowQuestions={handleShowQuestions}
 			/>
 
-			{showResults && (
-				<Results
+			{showQuestions && <Questions />}
+			{showTest && (
+				<Test
 					result={result}
-					onBack={handleBack}
+					onCounter={handleCounter}
 				/>
 			)}
-			{showQuestions && <Questions />}
-			{showTest ? (
-				<Test
-					currentQuestion={currentQuestion}
-					showAnswer={showAnswer}
-				>
-					<TestButtons
-						onWrongAnswer={handleWrongAnswer}
-						onCorrectAnswer={handleCorrectAnswer}
-						showAnswer={showAnswer}
-						setShowAnswer={setShowAnswer}
-						currentQuestion={currentQuestion}
-					/>
-				</Test>
-			) : (
-				showIntro && <Intro />
-			)}
-		</div>
+		</>
 	)
 }
 
@@ -118,7 +55,7 @@ function Header() {
 
 function AppButtons({ showTest, onShowQuestions, showQuestions, onShowTest }) {
 	return (
-		<div className='container'>
+		<div className='button-box'>
 			{!showTest && (
 				<Button
 					textColor='#ffffba'
@@ -134,10 +71,91 @@ function AppButtons({ showTest, onShowQuestions, showQuestions, onShowTest }) {
 				bgColor='#1c2129'
 				onClick={onShowTest}
 			>
-				{!showTest ? "Spustit test" : "Přerušit test"}
+				{!showTest ? "Spustit test" : "Ukončit test"}
 			</Button>
 		</div>
 	)
+}
+
+function Questions() {
+	return data.map((question) => (
+		<Question
+			question={question}
+			key={question.id}
+		/>
+	))
+}
+
+function Question({ question }) {
+	return (
+		<div
+			className='question'
+			key={question.id}
+		>
+			<p>
+				Otázka: <span>{question.question}</span>
+			</p>
+			<p>
+				Odpověď: <span>{question.answer}</span>
+			</p>
+		</div>
+	)
+}
+
+function Test({ result, onCounter }) {
+	const [showAnswer, setShowAnswer] = useState(false)
+
+	const [questions, setQuestions] = useState(data)
+	const [currentQuestion, setCurrentQuestion] = useState(
+		questions[getRandomQuestion(0, questions.length)]
+	)
+
+	function getRandomQuestion(min, max) {
+		min = Math.ceil(min)
+		max = Math.floor(max)
+		return Math.floor(Math.random() * (max - min) + min)
+	}
+
+	function handleWrongAnswer() {
+		setCurrentQuestion(questions[getRandomQuestion(0, questions.length)])
+		setShowAnswer(false)
+		onCounter((count) => count + 1)
+	}
+
+	function handleCorrectAnswer(id) {
+		let updatedQuestions = questions.filter((question) => {
+			return question.id !== id
+		})
+		setQuestions(updatedQuestions)
+		setShowAnswer(false)
+		setCurrentQuestion(
+			updatedQuestions[getRandomQuestion(0, updatedQuestions.length)]
+		)
+	}
+
+	if (questions.length !== 0)
+		return (
+			<div>
+				<>
+					<div className='question'>
+						<p>{currentQuestion?.question}</p>
+						{showAnswer && <p>{currentQuestion?.answer}</p>}
+					</div>
+					<div className='button-box'>
+						<TestButtons
+							onWrongAnswer={handleWrongAnswer}
+							onCorrectAnswer={handleCorrectAnswer}
+							showAnswer={showAnswer}
+							setShowAnswer={setShowAnswer}
+							currentQuestion={currentQuestion}
+						/>
+					</div>
+				</>
+			</div>
+		)
+	if (questions.length === 0)
+		return <p className='result'>Úspěšnost testu byla {result}%</p>
+		
 }
 
 function TestButtons({
@@ -177,54 +195,6 @@ function TestButtons({
 	)
 }
 
-function Questions() {
-	return data.map((question) => <Question question={question} key={question.id}/>)
-}
-
-function Question({ question }) {
-	return (
-		<div
-			className='question'
-			key={question.id}
-		>
-			<p>
-				Otázka: <span>{question.question}</span>
-			</p>
-			<p>
-				Odpověď: <span>{question.answer}</span>
-			</p>
-		</div>
-	)
-}
-
-function Test({ currentQuestion, showAnswer, children }) {
-	return (
-		<div>
-			<div className='question'>
-				<p>{currentQuestion?.question}</p>
-				{showAnswer && <p>{currentQuestion?.answer}</p>}
-			</div>
-
-			<div className='answer'>{children}</div>
-		</div>
-	)
-}
-
-function Results({ result, onBack }) {
-	return (
-		<div className='result'>
-			<p className='result'>Úspěšnost testu byla {result}%</p>
-			<Button
-				textColor='#baffc9'
-				bgColor='#1c2129'
-				onClick={onBack}
-			>
-				Zpět
-			</Button>
-		</div>
-	)
-}
-
 function Intro() {
 	return (
 		<div className='intro'>
@@ -246,6 +216,7 @@ function Intro() {
 				V závěru testu se ti zobrazí procentuální úspěšnost, tedy kolik odpovědí
 				bylo správně vůči celkovému množství zodpovězených otázek.
 			</p>
+			<p>Aby se zobrazil výsledek testu, musí bý všechny otázky zodpovězeny!</p>
 		</div>
 	)
 }
