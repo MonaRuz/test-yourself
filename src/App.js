@@ -5,8 +5,8 @@ import Button from "./Button"
 export default function App() {
 	const [showQuestions, setShowQuestions] = useState(false)
 	const [showTest, setShowTest] = useState(false)
-	const [counter, setCounter] = useState(0)
-	const result = Math.ceil(100 - (counter / (data.length + counter)) * 100)
+	
+	
 
 	function handleShowQuestions() {
 		setShowQuestions(!showQuestions)
@@ -18,9 +18,10 @@ export default function App() {
 		setShowQuestions(false)
 	}
 
-	function handleCounter() {
-		setCounter()
-	}
+	
+
+	
+	
 	return (
 		<>
 			<Header />
@@ -34,10 +35,7 @@ export default function App() {
 
 			{showQuestions && <Questions />}
 			{showTest && (
-				<Test
-					result={result}
-					onCounter={handleCounter}
-				/>
+				<Test/>
 			)}
 		</>
 	)
@@ -102,13 +100,17 @@ function Question({ question }) {
 	)
 }
 
-function Test({ result, onCounter }) {
+function Test() {
 	const [showAnswer, setShowAnswer] = useState(false)
+	const [counter, setCounter] = useState(0)
 
 	const [questions, setQuestions] = useState(data)
 	const [currentQuestion, setCurrentQuestion] = useState(
 		questions[getRandomQuestion(0, questions.length)]
 	)
+	const result = Math.ceil(100 - (counter / (data.length + counter)) * 100)
+
+	
 
 	function getRandomQuestion(min, max) {
 		min = Math.ceil(min)
@@ -119,7 +121,7 @@ function Test({ result, onCounter }) {
 	function handleWrongAnswer() {
 		setCurrentQuestion(questions[getRandomQuestion(0, questions.length)])
 		setShowAnswer(false)
-		onCounter((count) => count + 1)
+		setCounter(counter+1)
 	}
 
 	function handleCorrectAnswer(id) {
@@ -127,35 +129,38 @@ function Test({ result, onCounter }) {
 			return question.id !== id
 		})
 		setQuestions(updatedQuestions)
+		
 		setShowAnswer(false)
 		setCurrentQuestion(
 			updatedQuestions[getRandomQuestion(0, updatedQuestions.length)]
 		)
 	}
 
+	console.log(result);
+
 	if (questions.length !== 0)
 		return (
-			<div>
-				<>
-					<div className='question'>
-						<p>{currentQuestion?.question}</p>
-						{showAnswer && <p>{currentQuestion?.answer}</p>}
-					</div>
-					<div className='button-box'>
-						<TestButtons
-							onWrongAnswer={handleWrongAnswer}
-							onCorrectAnswer={handleCorrectAnswer}
-							showAnswer={showAnswer}
-							setShowAnswer={setShowAnswer}
-							currentQuestion={currentQuestion}
-						/>
-					</div>
-				</>
+			<div className="test-box">
+				<div className='test-question'>
+					<p>{currentQuestion?.question}</p>
+					{showAnswer && <p>{currentQuestion?.answer}</p>}
+				</div>
+				<div className='button-box'>
+					<TestButtons
+						onWrongAnswer={handleWrongAnswer}
+						onCorrectAnswer={handleCorrectAnswer}
+						showAnswer={showAnswer}
+						setShowAnswer={setShowAnswer}
+						currentQuestion={currentQuestion}
+					/>
+				</div>
+				<div>
+					<p className="ongoing-result">Průběžný výsledek testu:<strong className="ongoing-percent"> {result}%</strong> </p>
+				</div>
 			</div>
 		)
 	if (questions.length === 0)
 		return <p className='result'>Úspěšnost testu byla {result}%</p>
-		
 }
 
 function TestButtons({
@@ -163,14 +168,17 @@ function TestButtons({
 	onCorrectAnswer,
 	showAnswer,
 	setShowAnswer,
-	currentQuestion,
+	currentQuestion
 }) {
+	
+	
 	return (
 		<>
 			<Button
 				textColor='#ffb3ba'
 				bgColor='#1c2129'
 				onClick={onWrongAnswer}
+				
 			>
 				✘
 			</Button>

@@ -24,11 +24,10 @@ header span {
 	justify-content: center;
 }
 
-.question {
+.test-question {
 	border-bottom: solid 2px #baffc9;
 	color: #ffdfba;
 	width: 60%;
-	margin: 10px auto;
 	padding: 5px;
 }
 
@@ -58,6 +57,21 @@ header span {
 	border-top: 1px solid #baffc9;
 	max-width: 800px;
 	margin: 20px auto;
+}
+.test-box{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.ongoing-result{
+	color: #bae1ff ;
+	font-size: 20px;
+}
+.ongoing-percent{
+	border-bottom: 1px solid #bae1ff;
+	margin: 5px;
+	padding: 5px;
 }
 
 
