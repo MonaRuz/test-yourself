@@ -1,0 +1,1024 @@
+{
+	"questions": [
+		{
+			"id": "0a66d618-2982-43d3-aecf-53786a447a10",
+			"question": "Jaký je rozdíl mezi imperativním a deklarativním kódem a jaký typ je využíván v Reactu a proč?",
+			"answer": "Deklarativní : Používáme výrazy, abychom řekli, čeho chceme dosáhnout, tvoříme tak méně kódu, který může být ale méně srozumitelný. Například metoda filter(). Imperativní : Používáme proměnné a jejich změny, abychom přesně popsali proces, který se má dít krok po kroku. Kód je více blízký přirozenému jazyku, a tak více srozumitelný, je však delší. Například cyklus for. React funguje na principu deklarativního programování, kde říkáme, jak má vypadat UI, nedefinujeme způsob, jakým se mají procesy dít. Díky tomu nemusíme manuálně vybírat a manipulovat s elementy DOM, což by byl dlouhý, nesrozumitelný, špagetovitý a chybový kód. React dělá za nás spoustu věcí na pozadí."
+		},
+		{
+			"id": "fbd33c18-3e17-4387-b2bc-1d92ff10c68e",
+			"question": "Co je to React?",
+			"answer": "Populární, deklarativní, statem řízená JS knihovna pro vývoj UI, vyvinuta týmem Facebooku. Je založena na komponentách, což jsou stavební díly, ze kterých React skládá UI a které mohou být znovupoužitelné. Umožňuje abstrakci od DOM, takže se ho nedotýkáme."
+		},
+		{
+			"id": "3a9f43de-bd0b-49f8-a0cf-4191dbbe02f0",
+			"question": "Co je to JSX?",
+			"answer": "Deklarativní syntax používaný k popisu, jak má vypadat komponenta. Je rozšířením JavaScriptu umožňující vkládat JS, CSS a React do HTML v jednom bloku kódu."
+		},
+		{
+			"id": "14450149-eb22-4c49-8a72-77d366889a1c",
+			"question": "Proč se React jmenuje React?",
+			"answer": "Protože reaguje na změny state přerenderováním UI, tedy reaguje na interakci uživatele."
+		},
+		{
+			"id": "9f2cb40e-8bc7-4196-bdb1-b5ad86ab7dbf",
+			"question": "Nejznámější aplikace vytvořené v Reactu",
+			"answer": "Facebook, PayPal, Tesla, Netflix, IMDb, Airbnb."
+		},
+		{
+			"id": "4aa9f9db-9d42-4c3b-b176-79e4f4a19f56",
+			"question": "Kdy a jak byl React vytvořen?",
+			"answer": "Byl vytvořen společností Facebook, konkrétně Jordanem Walkerem v roce 2011 a v roce 2013 se stal open-source."
+		},
+		{
+			"id": "2b6d2024-e031-4b77-8b5d-e0e462df6b59",
+			"question": "Jaké jsou 2 nejvýznamější vlastnosti Reactu?",
+			"answer": "1) Renderování komponent na základě jejich aktuálního stavu. 2) Udržení synchronizace UI se statem pomocí re-renderů"
+		},
+		{
+			"id": "e077de2a-93da-431e-a84a-d9613096b39b",
+			"question": "Jaké jsou 3 hlavní způsoby založení React projektu a jaké mají výhody a nevýhody?",
+			"answer": "1) create-react-app: starší a pomalý způsob, který se doporučuje spíše na učení a testování. Vše je automaticky nastavené. (ESLint, Prettier, Jest..). 2) Vite: rychlý a moderní, je však potřeba ho manuálně nastavovat. 3) Pomocí frameworku"
+		},
+		{
+			"id": "f14b2322-4a44-4ccf-9b46-5d3b8b08db84",
+			"question": "Jaké frameworky má React k dispozici?",
+			"answer": "NEXT.js, Remix"
+		},
+		{
+			"id": "c94f3e10-b417-4fc3-93a6-6d0e78a8d9b7",
+			"question": "Co je NEXT.js?",
+			"answer": "Framework Reactu obsahující routing, data fetching, server-side rendering"
+		},
+		{
+			"id": "1899cd9e-d86e-49b1-865b-67562e108e22",
+			"question": "Jak vytvořit nový projekt pomocí create-react-app v terminálu?",
+			"answer": "1) Po najedí do potřebné složky: npx create-react-app(@verze) název-projektu. 2) Počkat do vytvoření projektu a pak zavřít terminál. 3) Přetáhnout soubor do VScode a promazat zbytečné soubory v projektu"
+		},
+		{
+			"id": "c1047c6d-aa6c-45b2-a3fc-3db36f3606e2",
+			"question": "Jak spustíme virtuální server v projektu create-react-app ve VScode?",
+			"answer": "Pomocí příkazu: npm start"
+		},
+		{
+			"id": "7aaff7d2-0a9e-451d-858b-6b2624226bb7",
+			"question": "Co je to v JS destructuring a jak se používá?",
+			"answer": "Pomocí destructuringu jednoduše vytáhneme data z objektu či pole. Z objektů získáme data tečkovou notací, z pole indexem. Pokud chceme získat všechna data z objektu: const {var1,va2,var3} = object, kde musí být pořadí proměnných stejná jako v originálním objektu. V případě pole všechna data vytáhneme: const [var1,var2,var3] = arr."
+		},
+		{
+			"id": "2b92f3d9-11a6-4079-b040-4c99a8326a03",
+			"question": "Co je to rest operátor a jak se používá?",
+			"answer": "Používá se k uložení pole do jiného pole takto: const [var1,var2,…var3] = arr. Výsledek bude var1, var2, [var3,var4]. Lze ho umístit pouze na konec destructuringu pole."
+		},
+		{
+			"id": "7a1a5e9a-0ab3-4ad9-a0c9-8715127d7c0a",
+			"question": "Co je to Spread operator a jak se používá?",
+			"answer": "Používá se k vytvoření nového pole, kam můžeme přidat další prvek, aniž bychom měli pole v poli. Lze ho použít i na objekty a může být umístěn jak na začátku, tak na konci pole. Const newArray=[…arr, var1, var2]. V rámci objektů lze pomocí tohoto operátoru přidávat i měnit vlastnosti. Const updatedObject = {…object, var1: val1}, kde var1 může být jak nová vlastnost, tak vlastnost původního objektu, ale přepsaná. Pozor, přepsání hodnot musí být až po spread operátoru, jinak se hodnota nepřepíše."
+		},
+		{
+			"id": "f4c9f1c8-0fda-4e8c-8546-e83f4c8e4be9",
+			"question": "Co je to template literals?",
+			"answer": "Vlastnost JS od ES6 umožňující zahrnout proměnné a JS výrazy do stringů. Používají se pomocí „backticks“, které uzavírají string a uvnitř používáme proměnné a výrazy pomocí ${výraz}."
+		},
+		{
+			"id": "2e7d7a3c-17ea-4ebd-98d7-29b17ba100d3",
+			"question": "Co je to ternární operátor?",
+			"answer": "Nahrazuje podmínku if/else tam, kde je nemůžeme použít a má 3 části: 1) podmínka, kde je výsledek true/false. 2) Výsledek operace, pokud je výsledek podmínky true. Výsledek operace, pokud je výsledek podmínky false Jednotlivé části jsou rozděleny takto: Podmínka ? hodnota, když true : hodnota, když false. Hodí se, když chceme namísto prostého true nebo false vrátit nějakou hodnotu."
+		},
+		{
+			"id": "c96dd3ea-49b9-470b-98df-87c2bb88fc77",
+			"question": "Co jsou arrow funkce?",
+			"answer": "Nový způsob psaní funkcí od verze ES6. Pomáhají rychle a jednoduše psát zejména jednořádkové funkce. Normální funkce: function getResult (str) { returnstr.split (“-“) [0] }. Arrow funkce: (str)=>str.split(“-“)[0].Arrow funkce s uložením do proměnné: const result=(str)=>str.split(“-“)[0]."
+		},
+		{
+			"id": "6d7e0079-11c6-4a4b-8ade-17aa97a32f5f",
+			"question": "Proč je lepší argument v šipkové funkci dávat do závorek?",
+			"answer": "Protože nevíme, zda budeme potřebovat časem více argumentů a zjednoduší nám to práci."
+		},
+		{
+			"id": "3b0d744c-b9ba-4da6-bff7-a844d9b52c6a",
+			"question": "Jaké známe v JS short-circuiting operátory a jak se používají?",
+			"answer": "&&: Pokud je 1. operand true, vrátí se 2. hodnota, pokud je false, vrátí se false. true && “some string“ vrátí “some string“. false && “some string“ vrátí false. ||: Pokud je první hodnota true, vrací 1. hodnotu, pokud false, vrací druhou hodnotu. true || “some string“ vrátí true. false || “some string“ vrátí some string. Pro oba operátory platí, že fungují i pro truthy a falsey hodnoty."
+		},
+		{
+			"id": "75c3d87e-0c77-4a8d-a1c3-ae6c1cf1b865",
+			"question": "Co uděláme, když chceme použít short-circuiting, ale zároveň nechceme, aby byla 0 považována za falsey hodnotu?",
+			"answer": "Použijeme nulový koalescenční operátor (nullish coalescing operator) ??, který funguje stejně jako ||, ale některý falsey hodnoty bere jako truthy."
+		},
+		{
+			"id": "7360a06d-91cb-4008-8f0e-49b9f4f36b7c",
+			"question": "Co je to optional chaining operator?",
+			"answer": "Logický operátor používaný pro podmíněný přístup k vlastnosti objektu. Pokud objekt vlastnost nemá, nevrátí se nám chyba, když se k ní snažíme přistoupit, přestože neexistuje. Používáme ho když máme více objektů, a některé vlastnosti obsahují a některé ne, nebo se objekt změní. Značí se otazníkem před tečkovou notací: object.subObject?.property"
+		},
+		{
+			"id": "5d59cbe5-5bc4-417e-a76b-e68ce8bd8cc7",
+			"question": "Které tři JS metody se nejčastěji používají na pole v Reactu a proč zrovna tyto?",
+			"answer": "map(), filter() a reduce(). Používají se proto, že nemění originální pole, ale vrací pole nové."
+		},
+		{
+			"id": "40f82fe4-2b20-4685-a9f4-fbba1c6d2c3b",
+			"question": "Jak se používá metoda map()?",
+			"answer": "const newArray = array.map(item => item * 2)\nconst newArray = array.map(item => item.title)"
+		},
+		{
+			"id": "8c0321c7-d3c4-4313-b0e4-54a7bb1a6c9c",
+			"question": "Jakými dvěma způsoby vytvoříme objekt pomocí metody map()?",
+			"answer": "const newArray = array.map(item => { return { title: item.title, author: item.author } })array.map(item => ({ title: item.title, author: item.author }))"
+		},
+		{
+			"id": "78c78312-ff20-4e0d-a95b-021ad04b900f",
+			"question": "Jak funguje metoda filter a jak vypadá?",
+			"answer": "Filtrujeme pole pomocí nějaké podmínky: const newArray = array.filter(item => podmínka)"
+		},
+		{
+			"id": "f193c6c0-01dd-4671-9bd4-48d5d0d81a38",
+			"question": "Co je to reduce() metoda a jak se používá?",
+			"answer": "Je to nejuniverzálnější metoda, která by mohla nahradit i všechny ostatní. Známá je jednoduchá metoda k akumulaci prvků v poli: array.reduce((acc, item) => acc + item, 0). Tato metoda může být velmi komplexní."
+		},
+		{
+			"id": "2e0656e3-4981-499a-b8c3-056007e9d7c7",
+			"question": "K čemu se používá a jak vypadá sort() metoda?",
+			"answer": "Slouží k řazení původního pole, a vyžaduje 2 argumenty pro porovnávání: const sorted = array.sort((a, b) => a - b) (řazení prvků pole od nejmenšího po největší), const sorted = array.sort((a, b) => b - a) (opačné řazení). Pokud použijeme sort() metodu bez argumentů, řazení je automatické a prvky pole se řadí podle abecedy nebo podle 1.číslice čísel."
+		},
+		{
+			"id": "a4dbad4f-5236-4fb2-8c3a-22f8a5a5f442",
+			"question": "Co uděláme, pokud chceme seřadit prvky v poli, ale nechceme měnit pořadí v originálním poli?",
+			"answer": "Před metodou sort() použijeme metodu slice(): const sorted = array.slice().sort((a, b) => b - a)"
+		},
+		{
+			"id": "a24bb64e-3a0a-47cc-a38d-c601e7cbb896",
+			"question": "Jak v Reactu přidáváme, mažeme a updatujeme prvky nebo objekty z pole?",
+			"answer": "Vždy tak, abychom neovlivnili originální datovou strukturu. Pro přidání prvku do pole (pokud jde o objekt), vytvoříme nový objekt a pomocí spread operátoru přidáme prvek do pole: const newArray = [...array, newObject]Pro mazání použijeme na pole metodu filter(): const newArray = array.filter(item => item.id !== 3). Update můžeme provést pomocí metod map(): const updatedArray = array.map(item => item.id === 1 ? { ...array, newProperty: value } : item)"
+		},
+		{
+			"id": "",
+			"question": "Jak funguje asynchronní JS a co je to promise?",
+			"answer": "Například při fetchování dat.chvíli trvá, než se data stáhnou, ale JS běží dál řádek po řádku. Nejdřív se spustí stahování, ale kdyby JS okamžitě přeskočil na další řádek a byl tam kód související se staženými daty, ještě by nebylo možné k nim přistupovat. Díky asynchronnímu JS následující řádky čekají, dokud se nedokončí stahování dat, zatímco okamžitě se vrací tzv. promise (příslib), který má různé statusy: pending, rejected,error, fullfilled a který umožní vykonávání nesouvisejícího kódu během stahování. Pro označení kódu, který chceme aby počkal, použijeme .then(callback funkce): fetch(https://...).then(res=>res.json()).then(...).Každé .then() vrací další promise."
+		},
+		{
+			"id": "e4d883bf-119e-42b8-bb79-97f3d8a1ef69",
+			"question": "Jak a proč používat async/await?",
+			"answer": "Čistší způsob psaní asynchronního kódu bez použití metody .then(). Funkce se označí jako async a uvnitř se kód, na který se má čekat, označí await, což zastaví kód uvnitř funkce, dokud se předcházející operace nedokončí."
+		},
+		{
+			"id": "c6bc16bd-ec33-45a2-88a2-7f34e1bf56e3",
+			"question": "Jak v souboru s komponentou manuálně propojíme komponentu s <div id='root'>?",
+			"answer": "const root = ReactDOM.createRoot(document.getElementById('root')) root.render(<React.StrictMode><App/></React.StrictMode>)"
+		},
+		{
+			"id": "f76a7796-96d4-4c67-b36f-d3bb38f09807",
+			"question": "Jak postupovat, pokud se stránka neobnovuje se změnami?",
+			"answer": "1) Zkontrolovat, jestli nám běží virtuální server 2) Zastavit a znovu spustit virtuální server 3) Manuálně obnovit stránku v prohlížeči 4) Zkontrolovat chyby v konzoli jak v editoru, tak v prohlížeči 5) Pokud nerozumíme chybě, Ctrl+C => Ctrl+V do googlu"
+		},
+		{
+			"id": "102f398b-8e32-4323-9e3b-5b96e0c94452",
+			"question": "Co je to komponenta?",
+			"answer": "Základní stavební prvek, ze kterých React skládá výsledné UI. V Reactu není nic mimo komponenty. Je to kousek UI, který má svá data, logiku a vzhled. Komponenty lze vkládat do sebe a používat tak „nesting components“. Jsou znovupoužitelné a mohou si navzájem předávat data pomocí props."
+		},
+		{
+			"id": "c27c415a-57c3-4cfb-9b36-bf43f51f7413",
+			"question": "Co je to component tree?",
+			"answer": "Struktura, díky níž lze lépe pochopit strukturu a vztahy mezi komponentami aplikace."
+		},
+		{
+			"id": "10583304-383d-40d0-9145-f0f088960165",
+			"question": "Jaká 3 základní pravidla mají funkcionální komponenty?",
+			"answer": "1) Název funkce musí začínat velkým písmenem 2) Měla by vracet JSX (ale nutně nemusí) 3) Každá komponenta může vracet pouze 1 element."
+		},
+		{
+			"id": "bf30da9e-6407-4c47-8a63-e6f706a2683c",
+			"question": "Proč React potřebuje nástroj Babel?",
+			"answer": "Je zodpovědný za konverzi JSX do JS."
+		},
+		{
+			"id": "1d84cebe-8de7-4c76-91f3-7b7cc713232d",
+			"question": "Jaká metoda je zodpovědná za konverzi JSX do HTML?",
+			"answer": "React.createElement"
+		},
+		{
+			"id": "351fbc7c-8813-46f0-9a47-3423aa91efb5",
+			"question": "Jak vypadá komponenta v šipkové notaci?",
+			"answer": "const Component = () => {}"
+		},
+		{
+			"id": "19d8a6a5-fae5-4e9a-8b96-5dcd61b0f197",
+			"question": "Jak v JS získáme aktuální a místní čas?",
+			"answer": "new Date().toLocaleTimeString()"
+		},
+		{
+			"id": "cf5b82ef-66a3-4f27-b9e8-75b70ebf8d6d",
+			"question": "Co je to separation of concerns?",
+			"answer": "Psaní kódu HTML, CSS a JS odděleně."
+		},
+		{
+			"id": "2b42c146-522c-43d8-8d80-2e12e047eab4",
+			"question": "Proč React porušuje separation of concerns?",
+			"answer": "Protože HTML a JS jsou velmi úzce svázány."
+		},
+		{
+			"id": "4b8ec75e-0f80-4c8e-9812-30d4a4ebe828",
+			"question": "Co to znamená, když je HTML a JS colocated?",
+			"answer": "Že kód pro HTML a JS je umístěn vzájemně co nejblíže tak, aby věci, které se mění a dějí společně, byly pohromadě."
+		},
+		{
+			"id": "f8d0a7d2-189e-480b-b4d2-68fb18086c02",
+			"question": "Jakými způsoby lze stylovat komponenty?",
+			"answer": "Inline-styling, externí CSS, SASS, CSS moduly, styled components, Tailwind"
+		},
+		{
+			"id": "4c0a019b-ea9d-4d8d-a09d-e4c7b652282d",
+			"question": "Co v Reactu použít namísto v HTML používaného style atributu?",
+			"answer": "V Reactu musíme inline styly definovat jako objekty. Použijeme dvakrát zvněné závorky – jedny ke vstupu do JS módu a druhé k definici objektu. <h1 style={{color: 'red'}}>...</h1>. Objekty lze definovat i předem a v závorkách použít proměnnou: <h1 style={style}>. V Reactu nelze použít <h1 style='...'>."
+		},
+		{
+			"id": "bb8a160f-542f-4df2-a7b7-5113d1025ce2",
+			"question": "Jaké rozdíly jsou mezi syntaxí stylování v HTML a v JSX?",
+			"answer": "V HTML píšeme dvouslovné CSS atributy s pomlčkou, zatímco v JSX používáme camelCase. Třídu v HTML udělujeme pomocí slova 'class', zatímco v JSX používáme 'className', protože slovo 'class' je v JS rezervováno."
+		},
+		{
+			"id": "2eb4bfa9-ef94-4b82-8123-dc32e1e95ac5",
+			"question": "Jak v Reactu posíláme props?",
+			"answer": "Vždy pouze ve směru parent -> child. Nejprve si pošleme data z parent komponenty a potom přijmeme v child komponentě. Props vždy posíláme jako objekt. Buď přímo jako props, kde v parent komponentě definujeme atributy objektu a v child komponentě provedeme destructuring, nebo pošleme přímo určitou hodnotu či funkci a v parent komponentě props přijmeme jako objekt ve zvněných závorkách. Pak není nutné provádět destructuring. Jako props můžeme posílat jakýkoliv typ dat i samotné komponenty."
+		},
+		{
+			"id": "5c3a1d9e-74ce-4db2-ae10-3b2a30653f05",
+			"question": "Co tvoří data v Reactu?",
+			"answer": "State jako interní data, která mohou být updatována, a props jako data pocházející zvenčí a mohou být updatovány pouze rodičovskou komponentou, ne dceřinou."
+		},
+		{
+			"id": "5256fffd-489c-468f-8b79-fb116920b70c",
+			"question": "Jaká pravidla platí pro props?",
+			"answer": "Měly by být immutabilní a v případě potřeby změny použijeme state."
+		},
+		{
+			"id": "50c1c4b0-b3a4-4c77-a4d1-32cc46e39076",
+			"question": "Jaké výhody má one-way data flow?",
+			"answer": "Je přehlednější, máme nad tokem větší kontrolu, lépe se debuguje a je to efektivnější."
+		},
+		{
+			"id": "b53dfdf1-78ed-488f-81c9-0c0ed2b05123",
+			"question": "Jak umožníme v JSX JS mód?",
+			"answer": "Pomocí zvlněných závorek."
+		},
+		{
+			"id": "a0c6bfc0-e8f3-4d78-bc6c-54114e3d2c27",
+			"question": "Jaká jsou pravidla pro JSX?",
+			"answer": "Lze je psát kdokoliv v komponentě, nechat projít funkcí, přiřadit k proměnné, v podmínce if/else, zatímco přímo v JSX nelze psát if/else podmínku a namísto ní lze použít ternární operátor nebo short circuit operandy. JSX může mít pouze jeden root. Aby komponenta vracela více elementů, je třeba je obalit do jiného rodičovského elementu, například fragmentu. V JSX musí být každý tag uzavřen. Všechny event handlery a ostatní vlastnosti (i CSS) musí být psány v camelCase. Inline CSS se píše jako objekt. I komentáře musí být uzavřeny ve zvlněných závorkách."
+		},
+		{
+			"id": "1a4d647a-91fc-41aa-8e23-9c9247b2bfb8",
+			"question": "Jak v Reactu vytváříme seznamy?",
+			"answer": "Vytvoříme znovupoužitelnou komponentu reprezentující jeden prvek seznamu a pak pomocí metody map() necháme vytvořit dynamicky seznam tak, že do jednotlivých komponent necháváme posílat rozdílná data jako props, při každé iteraci. Prvky v seznamu musí mít unikátní klíč. Nelze použít forEach, protože nic nevrací, a v seznamu by nic nebylo."
+		},
+		{
+			"id": "e869b40d-5478-46cf-858a-60fcaea718e4",
+			"question": "Jaké jsou tři způsoby podmínečného renderování v JSX?",
+			"answer": "&&, ternární operátory a multiple returns"
+		},
+		{
+			"id": "2f7079d1-6829-400e-b8d8-3d1a9c69ef57",
+			"question": "Pro jaký případ se nejvíce hodí podmínečné renderování pomocí &&?",
+			"answer": "V případech, kdy je podmínka určena hodnotami true/false a na jejím základě chceme vracet pouze jednu hodnotu."
+		},
+		{
+			"id": "c1ef3d06-3a04-4d27-b749-5de7d1202a11",
+			"question": "Pro jaký případ se nejvíce hodí podmínečné renderování pomocí ternárního operátoru?",
+			"answer": "V případě, kdy se na základě podmínky vždy něco vrací. První nebo druhá hodnota. V případě, kdy chceme vracet malé části JSX v rámci jednoho bloku."
+		},
+		{
+			"id": "e693ba3a-1c98-41e4-82e5-41db39d97742",
+			"question": "Pro jaký případ se nejvíce hodí podmínečné renderování pomocí multiple returns?",
+			"answer": "V případě, kdy chceme podmínečně vrátit celý blok JSX."
+		},
+		{
+			"id": "06379345-ebd3-46f9-964d-94e30317796c",
+			"question": "Jak funguje podmínečné renderování pomocí multiple returns?",
+			"answer": "Na základě podmínky if/else si necháme vrátit JSX a jelikož vždy platí pouze jedna z možností, neporušujeme pravidlo, kdy komponenta musí vracet pouze jeden blok JSX. Jiný název je také early return."
+		},
+		{
+			"id": "c17c2609-6a41-4357-b07c-367b2bd6bcab",
+			"question": "Co jsou React fragmenty?",
+			"answer": "Obalovací element bez sémantického významu podobný elementu <div>. Do DOM se nezakreslí, přesto může obalovat jiné elementy. Používá se, pokud chceme, aby JSX vrátilo více než 1 rodičovský element."
+		},
+		{
+			"id": "9f95949e-ddc8-4b4e-afcb-42458a0d873c",
+			"question": "Jak podmínečně nastavujeme text a className uvnitř komponent?",
+			"answer": "Pomocí ternárního operátoru uvnitř JS módu vrámci JSX vracíme podmínečně text a v className můžeme vracet podmínečně předem definovanou třídu uvnitř template literals."
+		},
+		{
+			"id": "db19f587-df58-4f22-9e8e-d3516c87c2b5",
+			"question": "Jakým způsobem handlujeme s eventy v Reactu?",
+			"answer": "Nevybíráme manuálně elementy z DOM, to by byl imperativní způsob psaní kódu, místo toho použijeme inline event handler v JSX elementu, kam musíme dát callback funkci, aby se nám funkce nespouštěla hned po vyrenderování, ale na základě eventu. Funkci event handleru můžeme také definovat v horní části komponenty a poté jednoduše napsat do event handleru. Pokud neposíláme nějaká data společně s eventem, nemusíme použít callback. Typický název funkce pro event handler začíná slovem handle."
+		},
+		{
+			"id": "3e3ad0df-3e72-4a41-ae05-69d6d2f1e7d8",
+			"question": "Co je to state?",
+			"answer": "Nejdůležitější a nejpoužívanější hook v Reactu. Díky state si komponenta drží a updatuje svá vlastní data napříč celého jejího životního cyklu. Reprezentuje paměť komponenty. Pokud se state změní, komponenta re-renderuje. State udržuje synchronizaci dat s UI."
+		},
+		{
+			"id": "2c42c1d8-9743-4d77-8d1a-1204601eb849",
+			"question": "Jak se jmenují jednotlivé states?",
+			"answer": "Piece of state nebo state variable."
+		},
+		{
+			"id": "205ca1ef-424d-4d43-a3ed-d4ab2d8d2e8e",
+			"question": "Co je to UI?",
+			"answer": "Celkový vzhled aplikace, souhrn všech zobrazených komponent."
+		},
+		{
+			"id": "42b11a1c-f59c-4e9c-84c4-942db4a6ef48",
+			"question": "Jak vytváříme state?",
+			"answer": "1) Přidáme novou state proměnnou pomocí useState funkce, do jejíhož argumentu vložíme počáteční hodnotu platnou při prvním renderu: useState(var). Obvykle state uložíme do nějaké proměnné: const arr=useState(var). Výsledkem useState funkce je pole o dvou proměnných, kde 1. hodnota je počáteční nebo reprezentující aktuální hodnotu a 2. hodnota je funkce umožňující updatovat 1. hodnotu. Obvykle tak rovnou provádíme destructuring tohoto pole: [var,setVar]=useState(var).\n2) Použijeme ji v JSX\n3) Provedeme update state pomocí event handleru a pomocí setter funkce setState, nikdy samostatně."
+		},
+		{
+			"id": "4b5a8e58-b4fd-4e8d-b26d-2adcd7cc4471",
+			"question": "Kdy použijeme useState?",
+			"answer": "Když chceme, aby se změna proměnné vykreslila i do UI, nebo aby se na základě změny proměnné změnilo i UI. Pro proměnné, které změnu UI nepožadují, používat klasické proměnné."
+		},
+		{
+			"id": "9e2204a4-61ea-40c7-98eb-dba9a35f2a91",
+			"question": "Jak vypíšeme mnoho <option> elementů dynamicky?",
+			"answer": "Pomocí array.from() takto: <select>{array.from({lenght: 20},(_,i)=>i+1).map((num)=>(<option value= {num} key={num}>{num}</option>))}</select>\nTakto dynamicky vytvoříme pole o dané délce, na které aplikujeme metodu map()."
+		},
+		{
+			"id": "4b8aa4d1-12cf-45f0-8f10-dbea0ff2fb8e",
+			"question": "Jak zamezíme automatickému reloadu stránky po odeslání formuláře?",
+			"answer": "Pomocí vepsání do event handler funkce tohoto: e.preventDefault()"
+		},
+		{
+			"id": "2d1ac43d-4ff6-41d1-a26d-65139e7b7433",
+			"question": "Jak nastavit formuláři event tak, aby se dala data odeslat i stisknutím klávesy ENTER?",
+			"answer": "Pokud dáme event na samotný formulář jako onSubmit. Naopak to nebude fungovat při připnutí eventu onClick na <button>"
+		},
+		{
+			"id": "4305f78a-97a8-4b8b-9a36-d110f9ba2dd4",
+			"question": "Jakým způsobem získáme data z formuláře v Reactu?",
+			"answer": "Pomocí controlled elements"
+		},
+		{
+			"id": "03a477ad-4a0a-4b3d-8f74-69a075fd4df1",
+			"question": "Co jsou controlled elements?",
+			"answer": "Koncept v Reactu, který umožňuje, aby si states jednotlivých inputů držel React namísto elementů v HTML."
+		},
+		{
+			"id": "74cfe6d5-efb0-4d27-94e3-e44a712b56e0",
+			"question": "Jak aplikujeme controlled elements?",
+			"answer": "Každé hodnotě, kterou očekáváme z inputu vytvoříme vlastní state proměnnou. Potom do jednotlivých inputů použijeme ttuto proměnnou jako value. Do inputů dáme také event listener, který umožní updatovat state: <input type=\"text\" value={state} onChange={(e)=>setState(e.target.value)}/>\nPo každé změně se do state proměnných uloží nová hodnota i bez submitu formuláře. Pozor na čísla, která jsou jako výsledek inputu vždy stringy."
+		},
+		{
+			"id": "44b02d85-80b8-4e4b-9ae3-4e5b1c1fb0e9",
+			"question": "Jak vyřešit problém, když chceme poslat props do rodičovské nebo sesterské komponenty?",
+			"answer": "Provedeme lifting-up state, tedy přesuneme piece of state do jedné z rodičovských komponent tak, abychom mohli poslat props do obou cílových komponent."
+		},
+		{
+			"id": "f3c05cc4-98f5-4eeb-bbfd-7a407534c2f4",
+			"question": "Jaké jsou rozdíly mezi state a props?",
+			"answer": "State jsou interní data, props jsou externí. State jsou jakousi pamětí komponenty, props se chovají spíše jako parametry funkce. State se updatují v samotné komponentě, props jsou read-only. Update státu způsobí re-render komponenty, stejně tak i změna props způsobí re-render. State se používá k interaktivitě, props umožňují rodičovské komponentě konfigurovat nastavení dceřinné komponentě."
+		},
+		{
+			"id": "fb3658ef-c23e-476d-9e2b-4f5c1851ac5d",
+			"question": "Co znamená „Thinking in React“?",
+			"answer": "Mít velmi dobrý mentální model toho, jak a kdy použít všechny nástroje Reactu. Myslet na změnu stavů, místo na změnu elementů."
+		},
+		{
+			"id": "f31e48e4-9422-4e46-9bc6-47b6c40933ef",
+			"question": "Jak probíhá proces vývoje aplikace zahrnující thinking in React?",
+			"answer": "1) Rozbít UI na komponenty a stanovit component tree a mít na paměti znovupoužitelnost komponent.\n2) Vybudování statické verze aplikace v React bez state proměnných.\n3) Thinking about state: kdy a kam umístit useState\n4) Stanovení data-flow při vědomí, že jen parent to child data flow je možný."
+		},
+		{
+			"id": "22265149-e729-4fe1-9ea1-ec1a09ef25c7",
+			"question": "Co je to state management?",
+			"answer": "Rozhodování, kdy a kde použít pieces of state, které pieces of state jsou nezbytné a jak určíme data-flow."
+		},
+		{
+			"id": "35186bd3-70a9-4c5e-9b6e-57151a268cb8",
+			"question": "Jaké typy má state?",
+			"answer": "1) Lokální – Je piece of state umístění v jedné nebo několika málo komponentách, kde přístup k němu má jen tato a dceřinné komponenty.\n2) Globální – Piece of state, ke kterému potřebuje přístup velké množství komponent a který je umístěný tak, aby k němu měly přístup všechny komponenty. Jinak se mu také říká shared state."
+		},
+		{
+			"id": "b8b60152-f4b9-4c47-95a7-87516ef10a1c",
+			"question": "Jak určit, zda použít lokální nebo globální piece of state?",
+			"answer": "Pokud dopředu nevíme, vždy začínáme umístěním v konkrétní komponentě, kde je ho potřeba. Při potřebě pak můžeme vždy použít lifting-up state."
+		},
+		{
+			"id": "d642e586-a0e8-46c4-928f-b60d5b3a6e1b",
+			"question": "Co je to lifting-up state?",
+			"answer": "Přemístění state do rodičovské komponenty, ze které budou mít přístup ke state i jiné komponenty, které to potřebují a do child komponent si data pošleme přes props."
+		},
+		{
+			"id": "2618cd3c-0d5c-453e-9fc4-b97adfbdae17",
+			"question": "Co je to derived state?",
+			"answer": "State vypočítaný z jiného state nebo props. Používáme ho vždy přednostně, pokud použít lze."
+		},
+		{
+			"id": "791c2ea4-998d-4cb7-885d-d1db9b825c6b",
+			"question": "Jaký je rozdíl mezi named a default exportem?",
+			"answer": "Named export musí být pod stejným názvem exportován i importován, zatímco default export může být importován pod názvem jiným."
+		},
+		{
+			"id": "2e889ff1-736b-4e93-8081-3090ab2c961d",
+			"question": "Jak automaticky oddělíme komponentu do samostatného souboru?",
+			"answer": "Ve VScode vybereme komponentu, klikneme pravým a zvolíme možnost refactor. Takto se vytvoří automaticky nový soubor i se všemi exporty a importy, v tomto případě named exporty, které ale později můžeme upravit."
+		},
+		{
+			"id": "cc1c79cc-9a7e-4f80-9cc9-57eb1313a7a2",
+			"question": "Jak se vytváří reusable komponenta?",
+			"answer": "Vytvoříme samostatnou komponentu, kde určíme, jaké props do ní lze poslat nezávisle na ostatních komponentách i externím CSS a určíme jim defaultní hodnoty."
+		},
+		{
+			"id": "40bc9a6b-ae23-4391-8940-7d15c29bbf5b",
+			"question": "Co je to children props?",
+			"answer": "Je to posílání samotného JSX jako props. Rodičovské komponentě rozdělíme otevírací a uzavírací tag a mezi ně vložíme obsah, který chceme poslat. V dceřinné komponentě přijmeme a použijeme tuto propsu jako children. Hodí se u vytváření generických komponent, kdy předem nevíme, jaký obsah v nich bude."
+		},
+		{
+			"id": "d84c38f5-08b0-47e4-9a15-b96f00336d5e",
+			"question": "Jak by mělo probíhat ideálně rozdělování UI na komponenty?",
+			"answer": "Komponenty bychom měli vytvářet tak, aby dávalo UI smysl. Neměly by být ani moc malé ani moc velké i když se tomu ne vždy vyhneme. Často začínáme jednou velkou komponentou a pak, když je moc velká, postupně logické části oddělujeme. Pokud v komponentě potřebujeme 10-15 props, víme, že je komponenta moc velká. Někdy ale už dopředu víme, že budeme potřebovat oddělenou komponentu, jako třeba u tlačítka. Příliš velké komponenty nejsou moc znovupoužitelné, jsou nepřehledné a nečitelné. Příliš malé komponenty budou mít zase příliš velkou abstrakci a bude jich příliš mnoho."
+		},
+		{
+			"id": "e5c598bd-b3c0-4a66-a539-4b940f71e4eb",
+			"question": "Jaká jsou hlavní kritéria při rozdělování komponent?",
+			"answer": "1) Logické rozdělení obsahu nebo logiky 2) Znovupoužitelnost 3) Provázanost a komplexicita 4) Osobní preference při psaní kódu"
+		},
+		{
+			"id": "0c406df2-6e9d-4209-a5ec-005fe9d3e57f",
+			"question": "Pokud nejprve vytvoříme jednu velkou komponentu, nad čím se zamýšlíme, když uvažujeme o vytvoření samostatné menší komponenty?",
+			"answer": "Má komponenta obsah nebo layout, který k sobě nepatří? Je možné komponentu jinde znovu použít a potřebujeme ji jinde použít? Dělá naše komponenta až moc různých věcí? Je komponenta závislá na mnoha props? Má komponent příliš mnoho useState nebo useEffect hooků? Je náš kód matoucí a příliš komplexní? Preferujeme menší funkce nebo komponenty?"
+		},
+		{
+			"id": "5f7cc1cc-09a2-4bf5-994a-5f1980e8e072",
+			"question": "Jaké nevýhody může přinášet zbytečné vytváření nových komponent předčasně?",
+			"answer": "Přílišná abstrakce, která pak stojí více mentální energie."
+		},
+		{
+			"id": "3760e5d9-1742-4802-929d-66d366e47b65",
+			"question": "Jaké nevýhody může přinášet zbytečné vytváření nových komponent předčasně?",
+			"answer": "Přílišná abstrakce, která pak stojí více mentální energie."
+		},
+		{
+			"id": "1a88d348-fa3c-4f9e-9d80-6a7c7d4a1e69",
+			"question": "Jaká jsou obecná doporučení při vytváření nových komponent?",
+			"answer": "1) Název komponenty by měl být odpovídající svému účelu, nebát se i delších ale konkrétnějších názvů.\n2) Nikdy nedeklarujeme komponentu uvnitř komponenty jiné.\n3) Vzájemně související komponenty můžeme umístit do stejného souboru\n4) Rozdílná velikost našich komponent je normální včetně těch malinkých i obřích."
+		},
+		{
+			"id": "2c57d736-9562-4f8d-aa53-906a2e8f855c",
+			"question": "Jaké máme kategorie komponent?",
+			"answer": "1) Stateless komponenty: Malém dobře znovupoužitelné komponenty, které nemají state, pouze mohou přijímat a jednoduše prezentovat props.\n2) Statefull komponenty: Malé a znovupoužitelné komponenty, které mají state.\n3) Structural komponenty: Mohou být velké, ale ne vždy nejsou znovupoužitelné. Obvykle vznikají sloučením mnoha menších komponent. Typické pro Pages, layouts nebo screens."
+		},
+		{
+			"id": "3e51bfc3-ec6d-4ef0-98c0-e0bb8e08f6da",
+			"question": "Co je to prop drilling?",
+			"answer": "Posílání props přes jednu nebo více komponent, které slouží pouze jako tranzitní, do cílové komponenty. Používá se pouze, pokud je tranzitní komponenta poue jedna nebo dvě, jinka se posílání props řeší jinými způsoby."
+		},
+		{
+			"id": "4be6fbb0-e71a-4b46-b698-7366a2bae34f",
+			"question": "Co je to component composition a k čemu slouží?",
+			"answer": "Je to jedna z náhrad prop drilling. Kombinování různých komponent pomocí children props nebo explicitně definovaných props. Namísto vložení komponenty s už určeným obsahem do větší komponenty, kde už obsah nemůžeme nijak měnit, necháme vnitřek rodičovské komponenty otevřená pro  jakoukoliv jinou komponentu, kterou si pošleme přes children props. Díky tomuto přístupu lze eliminovat několikastupňový propdrilling a zároveň budou komponenty vysoce znovupoužitelné. Výhodou je i přehlednost, kdy vidíme přímo v komponentě App téměř celý component tree."
+		},
+		{
+			"id": "5f5317a3-b503-4c85-b487-82f1cc78c2b2",
+			"question": "Co jsou explicitně definované props?",
+			"answer": "Další způsob, jak řešit prop drilling. Místo posílíní children jako props, přesně definujeme props pod nějakým názvem. K tomuto účelu není třeba otevírací a zavírací tag i rodičovské komponenty. Hodí se pro případy, ldy chceme posílat více komponet přes různé názvy. Běžně se používá v Routeru. <Box element={<MovieList movies={movies} />}/>.V rodičovské komponentě pak přijímáme místo children jako element, nebo pod jiným zvoleným názvem."
+		},
+		{
+			"id": "862ebacd-9a62-4a17-bb94-d9b1a7e9ec06",
+			"question": "Jak použít props jako component API?",
+			"answer": "Ve znovupoužitrlné komponentě v props stanovujeme, co všechno budou moci konzumenti posílat do komponenty. Nemělo by toho být ani moc ani málo. Musíme myslet i jako vývojáři  i jako kontumenti budoucí komponenty, abychom odhadli, které props budou třeba přijímat a které mohou být už příliš. Při tvorbě komplexnějších props se musí dobře určit defaultní hodnoty."
+		},
+		{
+			"id": "e41e7695-0c24-40d2-890f-85f2f5f778c3",
+			"question": "Co jsou proptypes?",
+			"answer": "Jde o type checking (v případě kdy konzument nebude používat TypeScript) pro znovupoužitelné komponenty. Vytváří se nad rodičovskou komponentou takto : NameOfComponent.propTypes={concreteProp: PropTypes.number,…}\nKromě number jsou tu ještě hodnoty: string, array, object, func, bool\nMůžeme přidat i .isRequired pro označení povinnosti konkrétní propsu poslat."
+		},
+		{
+			"id": "6e3d27b7-7965-4ff3-926b-835d9783727e",
+			"question": "Jaký je rozdíl mezi komponentou, instancí komponenty a elementy?",
+			"answer": "Komponenta je popis části UI. Je to regulérní JS funkce, která vrací React elementy, obvykle psané v JSX. Komponenta je pouze funkce, která je někým napsána, než je zavolána. Jde o jakýsi blueprint nebo template, ze kterého pak React vytvoří jednu nebo více instancí kopmponenty. Instance komponenty vzniká pokaždé, když komponentu někde použijeme a je fyzickou manifestací komponenty uvnitř našeho component tree. Je to instance komponenty, která si drží svůj state a props, a má svůj life-cycle. Výsledkem instancí komponent, kde se volá React.createElement() funkce, je React element. JSX je konvertován na element. React element je obří JS objekt, který React drží ve své paměti a obsahuje všechny nezbytné informace pro případné vytvoření DOM elementu."
+		},
+		{
+			"id": "f3cb8d6c-bac5-4e13-899d-1e4dd8709c52",
+			"question": "Co dostaneme, pokud si do konsole necháme vypsat přímo komponentu?",
+			"answer": "Console.log(<Komponenta/>) vrátí objekt React element obsahující vše co je potřeba k případné konverzi na DOM element. Součástí je také ochrana před cross-site scripting attacks. Objekt obsahuje Symbol, což je jeden z JS primitives, který nemůže být převeden na json a tak nám nic nemůže takto přijít přes API."
+		},
+		{
+			"id": "d9e38e78-981e-472b-81b7-b62ce0a470f7",
+			"question": "Proč nemůžeme komponenty volat přímo takto jako funkci: Komponenta()?",
+			"answer": "Protože pak React nebude brát výsledný objekt jako instanci komponenty, ale jako raw React element, což nechceme. Jako type v objektu se vrátí místo názvu komponenty obsah komponenty. Takto se nám komponenta nedostane do component tree a nemůže managovat své states."
+		},
+		{
+			"id": "95338a64-6b5f-41f4-95e0-23e6aa3f24db",
+			"question": "Co znamená renderování v Reactu?",
+			"answer": "Proces začíná spuštěním nového renderu, zpravidla změnou state. Při renderování React volá všechny funkce komponent a zjišťuje, jak by se měl updatovat DOM na základě posledních změn. V Reactu znamená render něco jiného, než je obecný pojem renderování, kdy si představujeme renderování na obrazovku. V Reactu se při renderu nic nezobrazuje, jde o vnitřní proces Reactu."
+		},
+		{
+			"id": "206d6b0a-42fe-4a92-8cbb-eb8d40aa1d63",
+			"question": "Jaké 4 fáze má vnitřní proces Reactu?",
+			"answer": "1) Spuštění renderu\n2) Fáze renderování\n3) Commit fáze\n4) Vykreslení do browseru."
+		},
+		{
+			"id": "4d2bbdf6-0b4e-4f3f-a634-18b1c0b3871b",
+			"question": "Jakými způsoby může být spuštěno renderování?",
+			"answer": "1) 1. spuštění aplikace\n2) update state"
+		},
+		{
+			"id": "6888ce9b-2b9e-48d7-8205-c5f4a1ed461a",
+			"question": "Jak probíhá v Reactu render fáze?",
+			"answer": "Nejprve React proběhně všechny instance komponent, které spouští re-render a vyrenderuje je, což znamená, že zavolá všechny korespondující komponent funkce a převede updatované elementy na tzv. virtuální DOM. V 1. renderování jsou to všechny komponenty, které projdou tímto procesem. Render fáze se nespustí okamžitě po updatu state, ale čeká se až bude mít JS engine čas."
+		},
+		{
+			"id": "c64df31d-8d1d-4e7c-925b-6824ce3b63d5",
+			"question": "Co je to virtuální DOM?",
+			"answer": "V iniciačním renderu React vezme celý komponent tree a převede ho na jeden velký React element, kterému říkáme React element tree a jinak se mu také říká virtuální DOM. Ten obsahuje všechny instance komponent. Jelikož jde o JS objekt, je tento proces rychlý a nenáročný. Při updatu stavu nějaké komponenty, React nahradí starou verzi této komponenty a nahradí jí updatovanou a vytvoří nový React element tree. Renderování této komponenty způsobí render i všech potomků bez ohledu na to, zda v nich došlo ke změně, aby se vždy zajistilo, že změna rodiovské komponenty ovlivní i ty dceřiné. Po vytvoření nového React element tree dojde ke srovnání s aktuálním fiber tree přes React reconciler. Výsledkem je aktualizovaný fiber tree, který může být eventuelně zapsaný do DOM."
+		},
+		{
+			"id": "80a40627-c8f8-4c63-96e2-d68e0a52f45a",
+			"question": "Co je rekonciliace?",
+			"answer": "Proces, který slouží Reactu k rozpoznání toho, co je potřeba změnit a které DOM elementy opravdu potřebují být vloženy, updatovány nebo smazány na základě poslední změny state."
+		},
+		{
+			"id": "558a6c34-343f-4f6f-83a1-6180bdcf97f9",
+			"question": "Proč potřebujeme rekonciliaci?",
+			"answer": "Protože psaní do DOM je relativně pomalé a je náročnější než vytváření React element tree a zároveň ne všechny elementy v DOM musí být ve skutečnosti aktualizovány a přepsány v DOM."
+		},
+		{
+			"id": "cf2f8ed4-1c80-4b7b-b54e-74616ea1a491",
+			"question": "Co je to reconciler?",
+			"answer": "Srdce Reactu v podobě Fiberu, které nám umožňuje, abychom se nikdy přímo nemuseli dotýkat DOM, ale stačilo Reactu pouze řící, jak má výsledek vypadat. Proces může probíhat asynchronně a úkony mohou být prioritizovány, rozděleny na části, pauznuty, znovuspuštěny i zahozeny. Díky tomu tento proces neblokuje JS například dvěma řadami dlouhých renderů ve větších aplikacích."
+		},
+		{
+			"id": "a0f2367f-7ce4-4c06-81e3-4c7029d3f222",
+			"question": "Co dělá Fiber?",
+			"answer": "Při iniciačním renderu vezme celý React element tree a na jeho základě postaví fiber tree. Prochází celým React element tree krok po kroku a zjišťuje co musí být změněno mezi current fiber tree a updated fiber tree. Tomuto procesu procházení krok za krokem se říká diffing."
+		},
+		{
+			"id": "7735b3b0-4911-4703-b62d-1b1d85262bfb",
+			"question": "Co je to fiber tree?",
+			"answer": "Interní tree obsahující fibers (vlákna) pro každou instanci komponenty a DOM element v aplikaci. Jde o mutable data structure, tedy nezaniká na nevzniká znovu po každém re-renderu."
+		},
+		{
+			"id": "1db01472-cdd1-46bb-8eb1-372df3c6d107",
+			"question": "Co jsou fibers (vlákna)?",
+			"answer": "Je to mutable data structure. Nevytvářejí se po každém re-renderu, pouze se mění při rekonciliačních krocích. Obsahují state, props, side-effects, seznam hooků a také pořadník toho, co má být provedeno (updating state, updating refs, spuštění side-effectů, provádění updatu DOM...). Jsou definovány jako jednotky práce. Jsou uspořádány jinak než React element tree, tedy místo vztahu parent-child má každý první potomek odkaz na svého rodiče a každý další child element má odkaz na sibling element. Toto uspořádání se nazývá linked list."
+		},
+		{
+			"id": "fa6a0a6a-0c63-49d7-8a1d-02173898f22f",
+			"question": "Co je to linked list?",
+			"answer": "Uspořádání vláken ve fiber tree, kde má každý první potomek odkaz na svého rodiče a každý další child element má odkaz na sibling element."
+		},
+		{
+			"id": "f14cbf15-7933-4cf2-a7fe-fb2d2ac4b3bc",
+			"question": "Co je to list of effects?",
+			"answer": "Seznam změn mezi current fiber tree a updatovaným React element tree, který bude použit při commit fázi renderu."
+		},
+		{
+			"id": "f481131c-38b5-49f7-8d47-497d7737b7f4",
+			"question": "Co je to list of DOM updates?",
+			"answer": "Výsledek diffing fáze, kdy už může docházet ke skutečnému vkládání, updatování a mazání elementů do DOM."
+		},
+		{
+			"id": "7f5674f3-8bf1-4b47-8e3a-c96c72b9cfa2",
+			"question": "Jak probíhá commit fáze?",
+			"answer": "React prochází list of effects a jednu změnu za druhou aplikuje do DOM, kde již existuje DOM tree. Tato fáze je synchronní a může být přerušena. Proto se nám na stránce nikdy neukazují partikulární části, dokud není proces dokončen, aby byl konzistentní. Jakmile je tento proces u konce, původně updated, tedy work in progress fiber tree se stává novým current tree pro příští renderovací proces. Browser pozná, že DOM byl změněn a znovu vykreslí obrazovku."
+		},
+		{
+			"id": "5d4f9daa-7357-4f6a-94e8-ee8390a3d430",
+			"question": "Co zajišťuje fungování commit fáze, když víme že render fázi obstarává React?",
+			"answer": "Je to knihovna ReactDOM. Zatímco React byl vyvinut pro mnoho platforem, nejen pro prohlížeče, a tudíž se nikdy DOM nedotýká, ReactDOM má v případě na starost právě manipulaci s DOM."
+		},
+		{
+			"id": "bf81b17a-5302-48d8-93c4-38eb9b3fc15e",
+			"question": "Co je to renderer?",
+			"answer": "Konkrétní nezávislá React knihovna, která zajišťuje commit fázi React aplikací na různých platformách. Například na mobilní aplikace je to React Native, na videa je to Remonion a na browsery je to ReactDOM."
+		},
+		{
+			"id": "1d7ad6ae-0757-4a4c-aabe-0c457e45e581",
+			"question": "Jaké úkony mohou probíhat po updatu v DOM?",
+			"answer": "Vkládání, update a mazání elementů."
+		},
+		{
+			"id": "2e5b0b0b-2ba3-4b13-a343-22b2edf7312f",
+			"question": "Jaká 2 hlavní pravidla má diffing a co tato pravidla Reactu umožňují?",
+			"answer": "1) 2 elementy odlišného typu vyprodukují 2 odlišné tree\n2) Elementy, které mají stabilní key se mezi rendery nemění. To umožňuje Reactu projít místo 1 000 000 000 operací 1000 operaci na 1000 elementů."
+		},
+		{
+			"id": "daa1940b-93e4-429a-a102-bfb7843c6907",
+			"question": "Jaké jsou 2 hlavní situace při procesu diffing a co se při nich děje?",
+			"answer": "1) Stejná pozice, odlišný element : React element smaže včetně state a props a vytvoří nový element s resetovaným state.\n2) Stejná pozice, stejný element: React nesmaže původní element, pouze ho updatuje."
+		},
+		{
+			"id": "64b43c0c-ee29-4b0b-946c-2c835bc7f1bc",
+			"question": "Co je to key prop?",
+			"answer": "Speciální prop, která říká Reactu, že element je unikátní a není jen násobnou instancí komponenty stejného typu. Když key prop zůstává neměnný napříš re-rendery, element bude zachován i přes změnu pozice. To je velmi důležité pro práci se seznamy. Když bude key prop dynamická, React element smaže a vytvoří element nový, i když je element na stejné pozici, jako předtím. To je zase důležité pro reset state."
+		},
+		{
+			"id": "3c6e5463-8d2d-4eb5-b59c-b2d953df1aa6",
+			"question": "Jaké známe typy logiky v React komponentách?",
+			"answer": "1)Render logika: je v horní části aplikace a popisuje jak bude komponenta vypadat, stará se o renderování. Kód je spuštěn, jakmile se komponenta vyrenderuje.\n2)Funkce event handlerů: Kód vykonaný na základě event handlerů a který skutčně aktivně něco dělá, manipuluje s aplikací a mění ji."
+		},
+		{
+			"id": "a6dd6633-dabe-4f9f-8d8a-6fcbb593f86f",
+			"question": "Co znamená pure component?",
+			"answer": "Komponenta, která má render logiku bez side-effectů."
+		},
+		{
+			"id": "70ef89a9-d32b-4ed9-ba8d-25b86b1d005d",
+			"question": "Co je side-effect?",
+			"answer": "Práce s jakýmikoliv daty mimo scope aplikace. Například změna externích proměnných, http requests, psaní do DOM, setting timers."
+		},
+		{
+			"id": "05fda7f0-0419-4c2d-b33b-08a14d9e1d3d",
+			"question": "Co jsou pure functions?",
+			"answer": "Funkce postrádající side-effecty, u které output závisí pouze na inputu a jsou velmi předvídatelné, protože při stejném inputu vždy dostaneme stejný output."
+		},
+		{
+			"id": "b352d611-0f91-4a19-8b77-100045916f11",
+			"question": "Jaká jsou hlavná pravidla pro render logiku?",
+			"answer": "1) Komponenta musí být pure\n2) Render logika nesmí produkovat žádný side-effect"
+		},
+		{
+			"id": "dbfcb343-40ea-46f4-89d4-cbaf88ba8e95",
+			"question": "Co nesmíme dělat v render logice?",
+			"answer": "Veškeré side-effecty: networks requests (API calls), vytvářet timery, přímo pracovat s DOM API (např. naslouchat eventům použitím addEventListener()), měnit objekty nebo proměnné mimo scope funkce (proto nikdy neměníme props), update state nebo ref (to způsobí infinity loop, i když nejde o side-effect) a další side effecty jako console.log(), generovat náhodná čísla.. (tyto nepůsobí škody)."
+		},
+		{
+			"id": "1a2dfbf5-0a60-4d6c-820a-5ea8b9f7020b",
+			"question": "Co je state batching?",
+			"answer": "Seskupení více změn state v jednom event handleru do jednoho updatu. Kdyby se každý state updatoval zvlášť, vyžadovalo by to násobné přerenderování."
+		},
+		{
+			"id": "b2f13251-7ea5-48ea-aa7d-68ad5392657c",
+			"question": "Jak prokážeme, že setState je asynchronní?",
+			"answer": "Když napíšeme do handleru 3x stejný setState, ale výsledek bude jen 1 update, protože uvnitř funkce, přestože proběhl update, nemáme přístup ke skutečně aktuální hodnotě. Tudíž se všechny setState updatovaly úplně na stejnou hodnotu. Také to můžeme prokázat pomocí console.log(za setter funkcemi) v handler funkci, kde se bude vypisovat také ještě původní hodnota."
+		},
+		{
+			"id": "d5a86d5b-4aa1-4e1c-a27e-96f1c880f0b9",
+			"question": "Jak vyřešit případ, kdy chceme mít přístup k aktuální updatované hodnotě state ve funkci, kde setState provádíme?",
+			"answer": "Použijeme callback funkci: setState((state)=>state+1)"
+		},
+		{
+			"id": "195847ef-5090-496e-936d-1bf0a5259b3b",
+			"question": "Co se děje při spuštění nějakého eventu?",
+			"answer": "Vytvoří se event object, který putuje od rootu documentu dolů po DOM tree ve fázi zvané capturing fáze (zachytávací) do chvíle, než narazí na target element(cílový), v němž došlo ke spuštění eventu. To jsme zajistili vložením event handler funkce do elementu. Potom, co event object narazí na target element, vrací se nahoru po DOM tree v bubbling fázi. Bubbling zajišťuje, že můžeme použít techniku zvanou event delegation, kde můžeme ovládat eventy centrálně v jednom rodičovském elementu."
+		},
+		{
+			"id": "bd4c8dbd-42bf-42b0-bb02-91e9f156056f",
+			"question": "Co jsou to syntetické eventy?",
+			"answer": "Způsob fungování eventů v Reactu. Ve vanilla JS nám event object dává přístup k native DOM event objectu (PointerEvent, MouseEvent, KeyboardEvent…). React nám dává přístup k tzv. synthetic event, který obaluje native DOM event object. Syntetické eventy jsou podobné nativním eventům, pouze přidávají nebo mění některé funkcionality nad těmi nativními. Mají stejný interface i metody jako nativní eventy."
+		},
+		{
+			"id": "3e5d7ba3-140c-45b8-bce9-d5ea61a9cc0e",
+			"question": "Jaký je rozdíl mezi knihovnou a frameworkem?",
+			"answer": "V JS je framework kompletní struktura obsahující vše,co potřebujeme k sestavění velkých aplikací. Nevýhoda zpočívá v tom, že jsme pak omezeni právě na technologie obsažené ve frameworku.Knihovny jsou kousky kódu, které sdílejí vývojáři mezi sebou. React je „view“ knihovna, protože se stará o to, jak bude vypadat UI. Pro vytvoření větší aplikace potřebujeme ještě spoustu dalších externích knihoven třetích stran (pro routing, styling, http requests). Máme díky tomu velký výběr v tom, co přesně k vývoji naší aplikace použijeme. Vývoj tak můžeme i přizpůsobovat aktuálním potřebám a zlepšit tak výkon aplikace. Nevýhodou je vyhledávání vhodných knihoven a nutnost se naučit s nimi pracovat. Také udržovat vše aktuální."
+		},
+		{
+			"id": "42a4e3e5-0bf7-4c6b-8f2f-cad872d89b92",
+			"question": "Nejznámější knihovny k Reactu pro routing",
+			"answer": "React router, React location"
+		},
+		{
+			"id": "d8e6dd5b-20b8-4a8a-b66e-3a08d81a6940",
+			"question": "Nejznámější knihovny k Reactu pro http requests",
+			"answer": "JS fetch(), AXIOS"
+		},
+		{
+			"id": "b1599e49-3d79-4cb3-87e9-1d352e6f7721",
+			"question": "Nejznámější knihovny k Reactu pro remote state management",
+			"answer": "React query, swr, Apollo"
+		},
+		{
+			"id": "9d93b0b9-e712-4ee6-a64b-77752b7b21fb",
+			"question": "Nejznámější knihovny k Reactu pro global state management",
+			"answer": "Context API, Redux, Zustand"
+		},
+		{
+			"id": "76432748-b2cd-47f8-9c9d-2c3b232ddc7d",
+			"question": "Nejznámější knihovny k Reactu pro styling",
+			"answer": "CSS modules, Styled components, Tailwind CSS"
+		},
+		{
+			"id": "f3dd4ba0-6a8f-4f5e-8fc4-6932e1e2f180",
+			"question": "Nejznámější knihovny k Reactu pro form management",
+			"answer": "React hook form, Formik"
+		},
+		{
+			"id": "13ee374c-6090-4e2a-942f-c4c3f3635c07",
+			"question": "Nejznámější knihovny k Reactu pro animace a tranzice",
+			"answer": "Motion, React spring"
+		},
+		{
+			"id": "ef3b75ef-31bd-4a85-8b8d-9448a978536c",
+			"question": "Nejznámější knihovny k Reactu pro UI components",
+			"answer": "Chakra, Mantine"
+		},
+		{
+			"id": "01f7e3a3-37f3-40bd-a5b2-d575f45bc6c7",
+			"question": "Frameworky pro React",
+			"answer": "Next.js, Remix, Gatsby"
+		},
+		{
+			"id": "6da34fc3-07b3-45fe-8000-17cfed5f7df3",
+			"question": "Kterými fázemi life-cycle prochází instance komponenty?",
+			"answer": "1) Mount / initial render. 2) Re-render : touto fází komponenta nemusí nutně procházet. 3) Unmount"
+		},
+		{
+			"id": "0e1220d4-0a69-4f88-93b2-696f460b222a",
+			"question": "Kdy dochází k re-renderu?",
+			"answer": "Když se změní state, když se změní props, když se re-renderuje rodičovská komponenta, když dojde ke kontextovým změnám."
+		},
+		{
+			"id": "515af66b-d6e2-4c92-8d46-b135d5d3b1fc",
+			"question": "Co se stane, když fetchujeme data  a následně na jejich základě updatujeme state v render logice?",
+			"answer": "Vznikne nekonečné fetchování. Budou vznikat neustále nové requesty. To díky setState v render logice, který nutí komponentu neustále re-renderovat a spouštět tak další fetch."
+		},
+		{
+			"id": "37e2c12d-b91b-4b3c-8810-344bb17ba628",
+			"question": "Jak můžeme správně v Reactu použít fetchování dat?",
+			"answer": "V useEffect hooku, kde se to hodí pro provedení v závislosti na life-cycle komponenty nebo event handleru, kde je provedení závislé na interakci uživatele. Pokud máme na výběr, volíme event handlery."
+		},
+		{
+			"id": "0bd5c5c9-7d8e-43c0-8b1e-eacdaa90e1a7",
+			"question": "Co je useEffect hook?",
+			"answer": "Druhý nejdůlržitější hook v Reactu, který umožňuje bezpečně provádět side-effecty. V useEffectu můžeme určit, ve které části life-cycle komponenty se daná část kódu provede. Spouští se vždy až po renderu komponenty, ve fázi vykreslování do browseru. Ideální je použít jeden useEffect na jednu věc kvůli lepšímu používání clean up funkcí."
+		},
+		{
+			"id": "539a2005-28e1-4f5e-820a-2a2c09de5d4f",
+			"question": "Co je to dependency array?",
+			"answer": "Druhý argument useEffect hooku, kam umístíme proměnné, jejichž změna má vyvolat spuštění kódu uvnitř hooku. Někdy se připodobňuje k event listenerům, které naslouchají změnám proměnných."
+		},
+		{
+			"id": "d3e1b395-0022-4a29-85f4-19f352d8ec34",
+			"question": "Jaké 3 části má useEffect?",
+			"answer": "1) Samotná funkce tedy effect\n2) Clean-up funkce\n3) Dependency array"
+		},
+		{
+			"id": "4e55ec65-1a38-44b9-98fc-b635c5bf127e",
+			"question": "Jaký je pravý důvod, proč máme effecty?",
+			"answer": "Protože potřebujeme udržet synchronizaci s nějakým externím systémem."
+		},
+		{
+			"id": "9c36c19c-ff10-460c-af16-5745ffab2f88",
+			"question": "Jaký je rozdíl mezi základním fetchováním dat pomocí promise a async funkcí?",
+			"answer": "Async funkce je elegantnější a při delším kódu ořehlednější.\nZákladní fetchování probíhá tak, že píšeme kód, který se má provést a před každým dalším řádkem, který potřebujeme, aby na data počkal, píšeme metodu .then(). Async funkci vytvoříme tak, že jí definujeme uvnitř useEffectu a podefinici i zavoláme. Uvnitř funkce se místo .then používá await a před funkcí samotnou musíme dát async.Fetch(https…).then((res)=>res.json().then((data)=>setData(data).Async function FetchFunction(){const res=await fetch (https..) ;const data= await res.json();setData(data)}FetchFunction()"
+		},
+		{
+			"id": "5f3ef27e-89dd-4f8e-93a4-faa8f73ab57a",
+			"question": "Jak do aplikace vložit loader?",
+			"answer": "Vytvoříme state proměnneou isLoading s počáteční hodnotou false a v useEffectu před fetchováním dat nastavíme hodnotu na true. Pos končení fetchování a případném odchycení chyb nastavíme state opět na false. Pak na základě této proměnné podmínečně renderujeme buď Loader komponentu, nebo obsah komponenty."
+		},
+		{
+			"id": "b47738a8-4c24-491f-bf6e-e180c5f49c6b",
+			"question": "Jaké problémy mohou nastat při fetchování dat?",
+			"answer": "1) Uživatel v průběhu fetchování ztratí internetové připojení. Pak by se fetch neukončil, isLoading state by zůstalo true a uživatel by dál čekal.2) Nejsou nalezena žádná data a příjde jen undefined, což bude způsobovat problémy."
+		},
+		{
+			"id": "09e2ddc5-90ab-4a1c-b106-1f384f0f9e0c",
+			"question": "Jak řešíme handlování chyb při ztrátě internetového připojení během fetchování?",
+			"answer": "Vytvoříme si state proměnnou error a jako počáteční hodnotu dáme prázdný string. Celý vnitřek async funkce obalíme do try bloku, kam také po části s fetchem dáme do podmínky if (!res.ok) throw new Error(“Naše chybová hláška“) Za ukončeným try blokem dáme catch (err) {console.error (err.message) setError (err.message)}. Pro zobrazení chybové hlášky si můžeme vytvořit i komponentu, která nahradí obsah komponenty v případě chyby a na základě state error jí renderovat místi obsahu komponenty. V CSS bychom pak měli mít předdefinované styly pro className=“error“. Musíme také ošetřit, aby zmizel loader. To uděláme tak, že za catch blok umístíme ještě blok finally, kde nastavíme isLoading na false. Tak se loader vypne i v případě chyby."
+		},
+		{
+			"id": "1f0df650-ee68-47d2-8d65-55068c05632f",
+			"question": "Jak řešíme chybu, kdy při fetchování nepřijdou žádná data, protože se nenalezly a místo dat přijde undefined?",
+			"answer": "Vytvoříme si state proměnnou error a jako počáteční hodnotu dáme prázdný string. Celý blok async funkce dáme do try bloku. Za kód v async funkci, kde máme již data rozbalena na objekt, dáme podmínku : if(data.Response===“false“) throw newError(“Naše chybová hláška“). Za ukončeným try blokem dáme catch(err) {console.error(err.message) setError(err.message)}. Pro zobrazení chybové hlášky si můžeme vytvořit i komponentu, která nahradí obsah komponenty v případě chyby a na základě state error jí renderovat místi obsahu komponenty. V CSS bychom pak měli mít předdefinované styly pro className = “error“."
+		},
+		{
+			"id": "1e2b18e0-148c-4821-89ab-3bc59dd0c471",
+			"question": "Jakou formu mají vždy dependencies?",
+			"answer": "Vždy state nebo props."
+		},
+		{
+			"id": "9ff4329b-f79b-43ee-8b1a-38348b6b16f8",
+			"question": "Jak jinak se říkalo useEffect hooku a proč?",
+			"answer": "Life-cycle hook, protože useEffect je úzce spojen s life-cycle komponenty."
+		},
+		{
+			"id": "f14f8e05-8dfb-4fc7-8b87-1413b4c74676",
+			"question": "Jaké dvě věci se stanou, pokud se změní state nebo props, které máme v dependency array?",
+			"answer": "1) Effect je znovu vykonán. 2) Komponenta se re-renderuje"
+		},
+		{
+			"id": "c3a40eef-d4b2-4b1a-8c8c-9b76a9b6c0ec",
+			"question": "Jaké máme typy dependency arrays?",
+			"answer": "1) V poli máme state nebo props – pak se effect synchronizuje s těmito state nebo props. Effect běží při mount fázi komponenty a při re-renderech způsobených těmito state nebo props. 2) [] – Effect není synchronizován z žádným state nebo props. Effect běží jen při iniciačním renderu. 3) Dependency array chybí – Effect je synchronizován se vším a běží při každém re-renderu."
+		},
+		{
+			"id": "064ae54c-9439-4d7b-b141-8fbd3503fe1c",
+			"question": "V které přesně fázi renderovacího procesu je vykonáván effect?",
+			"answer": "Ve fázi vykreslování do browseru, ne hned po renderu. Effect běží asynchronně aby dlouho běžící procesy, jako třeba fetchování dat, neblokovaly celý proces a uživatel tak neviděl příliš dlouho starou verzi komponenty."
+		},
+		{
+			"id": "14e646f0-5592-4b17-aaca-49de5d5ff5b0",
+			"question": "Co je to clean up funkce?",
+			"answer": "Část useEffectu, která vrací funkci zajišťující synchronizaci s komponentou i při fázi unmount. Můžeme v ní odstaňovat event listenery, zastavit http requesty, zastavit timer nebo resetovat hodnotu state. Tato funkce se vrací i při každém re-renderu. Umožňuje například zastavit předcházející http request, pokud je spuštěn další."
+		},
+		{
+			"id": "beea16aa-d5d8-4f39-92ac-d8d3e6baeb62",
+			"question": "V jakých případech používáme clean-up funkci?",
+			"answer": "1) K vymazání následků předchozího effectu před novým effectem při re-renderu, tedy když se effect děje opakovaně. 2) K resetování side-effectu po unmount komponenty."
+		},
+		{
+			"id": "1d7a8c38-e936-439f-aa0e-384a7f83b145",
+			"question": "Jak je možné použít clean up funkci tak, že změníme state uvnitř komponenty, která už zanikla?",
+			"answer": "Díky JS konceptu closure, která umožňuje, aby si funkce pamatovala proměnné v místě a čase jejího vzniku. Closure funkce si pamatuje na rodičovskou funkci a její proměnné, i když již byla ukončena."
+		},
+		{
+			"id": "1a07b1cd-d86a-43e7-81e2-eeb6092e4420",
+			"question": "Proč je třeba při opakovaném fetchování v useEffectu použít clean up funkci?",
+			"answer": "Protože by například při eventu onChange vznikaly stále nové a nové requesty. To by mohlo vzájemně zpomalovat fetchování. Také ve výsledku dostaneme spoustu dat, která ani nepotřebujeme. Předejdeme také race condition."
+		},
+		{
+			"id": "4ed05fc7-1397-4d8e-8e5e-5d1d7e7d525f",
+			"question": "Co je to race condition a jak mu předejít?",
+			"answer": "Problém, který vzniká při násobných requestech při fetchování dat, kdy jako výsledek fetchování může přijít neúplný výsledek. Předcházející request předběhne ten, který měl být poslední a platný. Předejdemu mu clean up funkcí v useEffectu."
+		},
+		{
+			"id": "d8b91c61-3c3b-4e2a-a084-97f87d460c38",
+			"question": "Jak použít clean up funkci při fetchování dat?",
+			"answer": "Skrze native browser API použijeme abort controller. Abort controller si vytvoříme hned na začátku async funkce ještě před try blokem: const controller = new AbortController(). Abychom propojili abortController s naším fetchováním, vytvoříme ve fetchi druhý argument: const res = await fetch(https…, { signal: controller.signal }). Abort kontroller použijeme v clean up funkci: return function (){ controller.abort() }. Pozor na problém, který může vzniknout tím, že je abort vnímán jako chyba."
+		},
+		{
+			"id": "6e8a7d1a-afae-4a9c-824e-fc1dd19b7790",
+			"question": "Jaký problém může vzniknout s abort controllerem v clean up funkci a jak jej řešit?",
+			"answer": "Zrušení předešlého fetche může způsobit chybovou hlášku, kterou ale nechceme zobrazovat a nechceme brát abort ze strany uživatele jako chybu. Vyřešit to můžeme v nastavení našich chyb pro fetch, kde dáme podmínku: if (err.name !== “AbortError“) setError(err.message)"
+		},
+		{
+			"id": "fb3a848d-1330-467c-8241-b98daa47e1cf",
+			"question": "Kdy použít clean up funkci při fetchování dat?",
+			"answer": "Když máme mnohonásobný fetch, při jednorázovém nemusíme."
+		},
+		{
+			"id": "15d9f9a4-57f2-4f0e-b2fe-0b5e9e08d16d",
+			"question": "Jak vytvoříme event listener pro naslouchání pro keyPress v naší aplikaci?",
+			"answer": "Potřebujeme přidat event listener přímo do documentu, aby keypress fungoval globálně. Použijeme useEffect, protože je to manipulace s DOM, tedy effect. V tomto případě musíme použít i clean up funkci ke zrušení eventu před vytvořením dalšího. Funkce, která se nám z effectu vrací, musí být úplně stejná jako ta, která event vytvářela, takže musíme funkci, která má na svědomí reakci na event vytvořit v callback funkci: function callback() { if (e.code === 'Escape') keypressFunction(); } document.addEventListener('keydown', callback); return function () { document.removeEventListener('keydown', callback); };"
+		},
+		{
+			"id": "e0e07a34-6e2e-4ef2-918e-7c6666de41ab",
+			"question": "Co je to escape hatch?",
+			"answer": "Takto nazývají vývojáři implementaci keypress eventu do documentu, který na ESC zavře nějakou komponentu. Jelikož jde o manipulaci s DOM, tedy effect, použijeme k tomu useEffect."
+		},
+		{
+			"id": "1cf7edf5-8a76-4bc8-9243-1205e1bf82b4",
+			"question": "Co jsou React hooky?",
+			"answer": "Speciální vestavěné funkce, které umožňují se zaháčkovat do internálií Reactu. Představují API, díky kterým se dostaneme ke stavům nebo registrování side-effectů ve fiber tree, který je jinak hluboko v Reactu a běžne k němu nemáme přístup. Vždy začínají předponou use."
+		},
+		{
+			"id": "7e95a0a2-9b0e-4e9c-9be1-75aa47a3b05a",
+			"question": "Jaké jsou nejznámější hooky?",
+			"answer": "useState, useEffect, useReducer, useContext, useRef, useCallback, useMemo, useTransition, useDefferedValue…"
+		},
+		{
+			"id": "9e62f640-f34d-438a-bb25-ea8f43c4e3ad",
+			"question": "Jaká jsou pravidla hooků?",
+			"answer": "1) Hooky mohou být volány pouze v top-level komponenty, to znamená, že je nemůžeme volat uvnitř nějakého bloku, jako podmínky if, cyklu, v nested funkci nebo early return. Jelikož uvnitř bloků kódu by mohlo dojít k tomu, že budou existovat jenom podmíněně, mohlo by dojít k narušení pořadí jejich volání, které musí být vždy stejné. 2) Hooky mohou být volány pouze uvnitř React funkcí (komponent nebo custom hooků)"
+		},
+		{
+			"id": "d33a4f69-58b2-4190-8a1b-b5be355cc636",
+			"question": "Proč musí hooky mít stále stejné pořadí?",
+			"answer": "Při prvním renderu React vybuduje i fiber tree i s fibery, které tvoří specificky propojený systém hooků. Pokud máme propojení komponenty A, B a C a B bude podmínečně renderováno, Může potom v systému chybět a A k C nebude mít žádné spojení, jelikožbylo tvořeno prostřednictvím komponenty B. React si jednotlivé hooky čísluje, aby je identifikoval. Tím usnadněje vývojářům práci s vytvářením vlastních názvů. Když se ale změní pořadí hooků, původní označení, které React na začátku vytvořil, už neplatí."
+		},
+		{
+			"id": "fd205862-9a02-4e22-9bc4-28de2e92fdda",
+			"question": "Proč nemusí fungovat iničiační hodnota v useState ve formě podmínky?",
+			"answer": "Protože tato hodnota je platná pouze při prvním renderu, kde ještě nemusíme mít všechna data. Řešením je použít useEffect."
+		},
+		{
+			"id": "6717f89d-f4ab-48ac-bca5-695267676742",
+			"question": "Co je to lazy initial state?",
+			"answer": "Jinak také inicializace state pomocí callback funkce nebo lazy evaluation. Když do iniciační hodnoty v useState dáme funkci. Tato funkce musí být pure, což znamená, že jí nebudeme dávat žádné argumenty. Iniciační data získaná funkcí (například z local storage) můžeme získat pouze při iniciačním renderu. Hodí se v případech, kdy je state závislý na nějakém procesu, například čtení dat z local storage."
+		},
+		{
+			"id": "0d3d6d84-72f4-4e66-89ec-60d4b4e5eaf9",
+			"question": "Jakými způsoby můžeme provést update state?",
+			"answer": "1) Jednoduše: setState(value+1). 2) Pomocí callback funkce: setstate((value)=>value+1)."
+		},
+		{
+			"id": "f4e48916-78b2-44b3-9c44-85fe1105b8a3",
+			"question": "Jak můžeme získat přístup k updatovanému stavu state proměnné okamžitě po setState uvnitř funkce event handleru?",
+			"answer": "Pomocí callback funkce vložené do setState."
+		},
+		{
+			"id": "2d7ecb2e-872b-46dd-99bb-ec2da073e7e4",
+			"question": "Jak nevybírat DOM elementy v Reactu?",
+			"answer": "Manuálně. Vždy bychom měli dát přednost deklarativnímu způsobu."
+		},
+		{
+			"id": "4e95fcd9-e7fc-4162-88c2-18c52a3a0773",
+			"question": "Jak manuálně vybrat DOM element v reactu?",
+			"answer": "Pomocí useRef, který potom můžeme používat v effectu, abychom ho nemuseli vybírat znovu a znovu."
+		},
+		{
+			"id": "7f6c0a69-d97a-4610-8191-2cfb6015b60e",
+			"question": "Co je useRef hook?",
+			"answer": "Je to reference, jakýsi box, kam můžeme uložit jakákoliv data, která bychom chtěli uchovat napříč re-rendery. Tato hodnota je na rozdíl od většiny věcí v Reactu mutable, což znamená, že odolává resetu stejně jako state. Jeho update ale nezpůsobí re-render. Drží zpravidla hodnotu, kterou nepoužíváme v JSX, pouze v event handlerech nebo effectech."
+		},
+		{
+			"id": "5b8e79e2-c17a-4982-b671-5c7512d7e8f2",
+			"question": "Jak čteme hodnotu ref?",
+			"answer": "Pomocí myRef.current"
+		},
+		{
+			"id": "1a4c3c3c-84cc-470d-b2f1-87e545fbb55a",
+			"question": "Kdy použijeme useRef?",
+			"answer": "1) K uložení proměnné, kterou chceme, aby si react držel napříč re-rendery. Zálohování předešlého state, uložení ID setTimeOut funkce atd.. 2) K vybírání a ukládání DOM elementů."
+		},
+		{
+			"id": "99613c64-cf32-4783-85da-c1478a7113b1",
+			"question": "Jak probíhá deklarativně vybrání DOM elementu přes useRef?",
+			"answer": "1) Vytvoříme ref: const myRef= useRef(null). 2) Vybereme element tak, že vybereme v return části komponenty přímo daný element a dáme mu vlastnost ref: <input ref={input}/>. 3) Použijeme ref pomocí useEffect hooku, protože do ref se element může uložit až po renderu komponenty: myRef.current.focus()"
+		},
+		{
+			"id": "c6f00e93-535a-40ab-b136-7efb743b2ff9",
+			"question": "Co jsou custom hooky?",
+			"answer": "Znovupoužitelné kousky související logiky, kterou můžeme extrahovat do samostatného hooku. Pokud extrahovaná logika neobsahuje hooky, jde o regulérní funkci, pokud ano, jde o custom hook. Takové funkce musí začínat předponou use. Mohou přijímat a vracet jakákoliv data. Jde o extrakci non-visuální části logiky."
+		},
+		{
+			"id": "0a75b8aa-9d3d-4b07-9c7c-84869d27d18d",
+			"question": "Jak vytvoříme custom hook?",
+			"answer": "Vezmeme celý související blok kódu (například useEffect pro fetchování dat) a přesuneme ho do nově vytvořeného hooku s custom názvem. To, co nám tam bude chybět si nastavíme jako parametry funkce a použijeme na příslušných místech. Nakonec dáme return a k němu data či funkce, které chceme, aby hook vracel. Hook nezapomeneme exportovat a naimportovat do komponenty, kde ho potřebujeme. V cílové komponentě můžeme provést destructuring a data použít."
+		},
+		{
+			"id": "e1e17f27-648f-42b7-b6a0-d79c0f07ff6c",
+			"question": "Jak použít v komponentě custom hook, aby fungoval, jako useState?",
+			"answer": "const [value, setValue] = useCustomHookState([])"
+		},
+		{
+			"id": "c9f16939-5704-4a3b-9487-5fbf04e8a6b7",
+			"question": "Jak použijeme custom hook v event handleru?",
+			"answer": "Z custom hooku si necháme místo dat vrátit funkci a tu použít do event handleru. Do event handler funkce nelze dávat customHooky."
+		},
+		{
+			"id": "e9d81fbf-0d5a-4e52-8a23-99f960e02d21",
+			"question": "Co je to useReducer hook?",
+			"answer": "Je to komplexnější a pokročilejší způsob k managování states, kde jsou všechny states ovládány na jednom centrálním místě, v reducer funkci. Obvykle se používá při komplexnějších nebo provázaných state proměnných. Vypadá takto: const[state,dispatch]=useReducer(reducer,initialState). UseReducer voláme s reducer funkcí jejím initialState a vrátí nám state a dispatch funkci. InitialState je obvykle objekt o více state proměnných."
+		},
+		{
+			"id": "f3681e94-bfc2-4f61-9075-735d03bf536a",
+			"question": "Co je to reducer funkce?",
+			"answer": "Pure funkce, která vezme aktuální state a action jako argumenty k vytvoření next state. Obsahuje celou logiku k updatování state na jednom místě. A odděluje tutpo logiku od komponenty. Je to jakýsi setState se superscjopnostmi. Zjednodušeně vypadá takto: function reducer(state,action){return state + action} Často se uvnitř funkce používá podmínka k určování co a jak se má updatovat a místo if podmínky se používá switch."
+		},
+		{
+			"id": "af056a1a-f6a4-4a9c-80cf-c3ab5c198f85",
+			"question": "Kde definujeme reducer funkci?",
+			"answer": "Mimo komponentu."
+		},
+		{
+			"id": "2e0ce6da-5b14-4e2e-b91f-84dbd3cb1a77",
+			"question": "Kdy se spustí funkce reducer?",
+			"answer": "Spuštěním funkce dispatch, kterou vrací useReducer hook. Je něčím jako setState u useState. Jako argument mívá action objekt."
+		},
+		{
+			"id": "a2e120cf-0ea2-45c7-a9ae-9463d8ee618e",
+			"question": "Co je to dispatch funkce?",
+			"answer": "Funkce spouštějící funkci reducer a updatující state v useReducer hooku. Do argumentu obvykle vkládáme objekt, který pak reprezentuje action a má properties type a (volitelně) payload. Vypadá asi takto: dispatch({type:“nameOfValue“,action: -1)}) Posíláme tak akci z event handleru do reducer funkce s informacemi o updatování state."
+		},
+		{
+			"id": "79c3c42a-2855-4487-bc9e-ef1d38172366",
+			"question": "Kdy je výhodné použít useReducer hook?",
+			"answer": "1) Když má komponenta příliš mnoho state proměnných a state updatů, přičemž event handlery, které to mají na starost se rozprostírají po celé aplikaci. 2) Když se mnoho state proměnných updatuje v jednu chvíli, na jeden event handler. 3) Když se jedna state proměnná updatuje v závislosti na mnoha jiných state proměnných."
+		},
+		{
+			"id": "d0b1db8f-1395-4c15-b271-25f1a5a313d8",
+			"question": "Co znamená, že je v Reactu state imutabilní?",
+			"answer": "Že React nikdy state nemění. Namísto toho na základě aktuálního state vytvoří zcela nový state, a state nikdy nemůže obsahovat side-effect."
+		},
+		{
+			"id": "5ec64e25-b168-4e1d-94e8-7e0739d593a5",
+			"question": "Co je to action vrámci useReducer hooku?",
+			"answer": "Objekt, který popisuje způsob updatu state. Obvykle obsahuje type, což je typ updatu a payload, který vloží data. Na základě těchto informací reducer určí, jak přesně vytvořit next state."
+		},
+		{
+			"id": "2c44c83a-bc25-4c71-bfce-c835ca7c7c12",
+			"question": "Jak v JS vypadá switch?",
+			"answer": "Switch(argument){case 1: return “something“ case 2: return “somethingElse“ default: throw new Error(“This is error“)}"
+		},
+		{
+			"id": "f3c09b02-c5fc-4a2d-8c6b-1b5247a8e4ea",
+			"question": "Z jakých částí se skládá useReducer hook?",
+			"answer": "State object, reducer, dispatch funkce a action objekt."
+		},
+		{
+			"id": "fa6a4b73-8a73-4d5d-8f63-4195e09d9e1f",
+			"question": "Jak vypadá proces který probíhá v iseReducer hooku?",
+			"answer": "Máme nějaký event handler, který potřebujeme, aby updatoval state. Zavoláme tedy dispatch funkci, kterou nám vrátil useReducer hook, který jsme si definovali. Dispatch funkce pošle action objekt obsahující informace pro reducer do reducer funkce, kterou máme mimo komponentu. Action objekt obsahuje type a payload. Reducer pak dá dohromady tento objekt s current state a vrací next state. Po updatu state instance komponenty re-renderuje."
+		},
+		{
+			"id": "d4c25f15-0a50-4a6c-a4e9-98d1ff2fe43a",
+			"question": "Proč se nejdůležitější funkce v useReducer hooku jmenuje reducer?",
+			"answer": "Protože funguje stejně jako metoda .reduce() používaná v JS na pole. Vezme všechny hodnoty pole a zredukuje je na jednu stejně jako reducer, terý vezme všechny actions a zredukuje je do jednoho state."
+		},
+		{
+			"id": "f18ad0a9-6c9a-4ee3-92b7-1f13a2f57a0f",
+			"question": "Jak by se dal proces managování state pomocí useReduceru popsat jako alegorie?",
+			"answer": "Jako bychom si chtěli v bance vybrat velký obnos peněz. Nemužeme přijít a jednoduše peníze vybrat (useState). Musíme použít prostředníka (reducer), který lépe než my rozumí, jak zacházet s trezorem. K tomuto pracovníkovi v bance přijdme  s jasným záměrem. Potřebujeme vybrat předem určený obnost z předem určeného účtu. Řekneme pracovníkovi, že potřebujeme vybrat peníze (dispatch) Předáme důležité informace (action) pracovníkovi (reducer) a ten pak pomocí těchto informací vybere peníze z trezoru (update state) a předá nám je."
+		},
+		{
+			"id": "9e31ea39-e4fc-4b94-8c0c-d4f2a8813b54",
+			"question": "Jak vs vscode nasimulujeme falešné API?",
+			"answer": "V terminálu dáme npm install json-server. Abychom mohli server spustit, musíme dát nové nastavení do scripts v souboru package.json, kde bude uveden cílový soubor :“server“:json-server --watch data/ourData.json --port 8000. V nové kartě terminálu dáme npm run server a měla by se nám zobrazit stránka s našimi daty. Tuto url potom stačí použít k fetchování."
+		},
+		{
+			"id": "3e56a3e0-d7db-468d-9e1a-6c071a25e413",
+			"question": "K čemu se používá status state?",
+			"answer": "Místo states pro isLoading, errror atd, máme pouze jeden state s názvem status, kde měníme stringy podle potřeby. Používá se status pro loading, error, ready, active, finished."
+		}
+	]
+}
