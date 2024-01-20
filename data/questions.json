@@ -1019,6 +1019,11 @@
 			"id": "3e56a3e0-d7db-468d-9e1a-6c071a25e413",
 			"question": "K čemu se používá status state?",
 			"answer": "Místo states pro isLoading, errror atd, máme pouze jeden state s názvem status, kde měníme stringy podle potřeby. Používá se status pro loading, error, ready, active, finished."
+		},
+		{
+			"id": "e1296375-95ce-4e18-9ae0-da052d7d79e7",
+			"question": "Jak můžeme provést destructuring state objectu v use reduceru?",
+			"answer": "Buď mimo useReducer hook klasicky: {state,anotherState}=state, nebo přímo uvnitř pole, které useReducer vrací,jako nested destructuring: [{state,anotheState},dispatch]=useReducer(reducer,initialState)."
 		}
 	]
 }

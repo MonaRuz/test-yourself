@@ -1,5 +1,6 @@
 import { useState } from "react"
-import TestButtons from "./TestButtons"
+import Button from "./Button"
+
 
 export default function Test({questions,setQuestions,data}) {
     const [showAnswer, setShowAnswer] = useState(false)
@@ -49,13 +50,34 @@ export default function Test({questions,setQuestions,data}) {
 					{showAnswer && <p>{currentQuestion?.answer}</p>}
 				</div>
 				<div className='button-box'>
-					<TestButtons
-						onWrongAnswer={handleWrongAnswer}
-						onCorrectAnswer={handleCorrectAnswer}
-						showAnswer={showAnswer}
-						setShowAnswer={setShowAnswer}
-						currentQuestion={currentQuestion}
-					/>
+				{showAnswer && (
+				<Button
+					textColor='#ffb3ba'
+					bgColor='#1c2129'
+					onClick={handleWrongAnswer}
+				>
+					✘
+				</Button>
+			)}
+			{!showAnswer && (
+				<Button
+					textColor='#bae1ff'
+					bgColor='#1c2129'
+					onClick={() => setShowAnswer(true)}
+				>
+					Zobrazit odpověď
+				</Button>
+			)}
+
+			{showAnswer && (
+				<Button
+					textColor='#baffc9'
+					bgColor='#1c2129'
+					onClick={() => handleCorrectAnswer(currentQuestion?.id)}
+				>
+					✔
+				</Button>
+			)}
 				</div>
 				<div>
 					<p className="ongoing-result">Průběh:<strong className="ongoing-percent"> {progress}/{data.length}</strong> </p>
